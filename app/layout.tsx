@@ -4,15 +4,19 @@ import "./globals.css";
 import "./pages.css";
 import "./site-audit.css";
 import "./brand-system.css";
+import "./motion.css";
+import ScrollExperience from "./components/ScrollExperience";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sutcliffe-website.vercel.app"),
+  metadataBase: new URL("https://www.sutcliffetrading.com"),
   title: {
     default: "Sutcliffe Trading | New Zealand Timber Supplier Since 1988",
     template: "%s | Sutcliffe Trading",
   },
   description:
     "New Zealand timber knowledge, trusted relationships and practical supply experience since 1988.",
+  category: "Timber supply",
+  robots: { index: true, follow: true },
   applicationName: "Sutcliffe Trading",
   icons: {
     icon: [
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NZ",
-    url: "https://sutcliffe-website.vercel.app/",
+    url: "https://www.sutcliffetrading.com/",
     siteName: "Sutcliffe Trading",
     title: "Sutcliffe Trading | New Zealand Timber Supplier Since 1988",
     description:
@@ -65,7 +69,33 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </nav>
           <Link className="header-cta" href="/contact">Request timber <span>↗</span></Link>
         </header>
+        <ScrollExperience />
         {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.sutcliffetrading.com/#organization",
+              name: "Sutcliffe Trading",
+              url: "https://www.sutcliffetrading.com/",
+              logo: "https://www.sutcliffetrading.com/brand/sutcliffe-logo-original-square.png",
+              foundingDate: "1988",
+              email: "sales@sutcliffetrading.com",
+              telephone: "+64 21 084 73262",
+              areaServed: { "@type": "Country", name: "New Zealand" },
+              sameAs: ["https://www.linkedin.com/company/sutcliffe-trading/"]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.sutcliffetrading.com/#website",
+              url: "https://www.sutcliffetrading.com/",
+              name: "Sutcliffe Trading",
+              publisher: { "@id": "https://www.sutcliffetrading.com/#organization" },
+              inLanguage: "en-NZ"
+            }
+          ]
+        }) }} />
         <footer className="site-footer shell">
           <div>
             <img src="/brand/sutcliffe-logo-original-square.png" alt="Sutcliffe Trading" />
