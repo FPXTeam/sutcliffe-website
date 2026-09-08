@@ -1,22 +1,36 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollExperience() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const page = document.querySelector<HTMLElement>(".motion-page");
+
+    // Content is visible by default. Motion is only enabled after the current
+    // page has been found, so a script failure can never leave copy hidden.
+    document.documentElement.classList.remove("motion-ready");
     if (!page) return;
 
-    document.documentElement.classList.add("motion-ready");
     const reveals = Array.from(page.querySelectorAll<HTMLElement>(".reveal"));
     const staggerItems = Array.from(page.querySelectorAll<HTMLElement>(".motion-stagger > *"));
+
+    const observed = Array.from(new Set([...reveals, ...staggerItems]));
+    observed.forEach((el) => {
+      el.classList.remove("is-visible");
+      el.classList.remove("motion-item");
+      el.style.removeProperty("--motion-delay");
+    });
 
     staggerItems.forEach((el, i) => {
       el.classList.add("motion-item");
       el.style.setProperty("--motion-delay", `${Math.min(i % 6, 5) * 70}ms`);
     });
 
-    const observed = [...reveals, ...staggerItems];
+    document.documentElement.classList.add("motion-ready");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,9 +40,17 @@ export default function ScrollExperience() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
     );
-    observed.forEach((el) => observer.observe(el));
+
+    observed.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.96 && rect.bottom > 0) {
+        el.classList.add("is-visible");
+      } else {
+        observer.observe(el);
+      }
+    });
 
     let ticking = false;
     const updateScroll = () => {
@@ -44,6 +66,7 @@ export default function ScrollExperience() {
         ticking = true;
       }
     };
+
     updateScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -51,8 +74,9 @@ export default function ScrollExperience() {
       observer.disconnect();
       window.removeEventListener("scroll", onScroll);
       document.documentElement.classList.remove("motion-ready");
+      document.documentElement.style.setProperty("--scroll-progress", "0");
     };
-  }, []);
+  }, [pathname]);
 
   return <div className="scroll-progress" aria-hidden="true" />;
 }
