@@ -1,0 +1,96 @@
+/* Sitewide visual QA pass. Balance typography, remove awkward narrow columns, and tighten presentation layouts. */
+
+h1,h2,h3,.display-serif{ text-wrap:balance; }
+p{ text-wrap:pretty; }
+
+/* Keep large editorial headings from collapsing into narrow stair-step columns. */
+@media (min-width:1100px){
+  .range-lead{grid-template-columns:minmax(560px,.95fr) minmax(380px,1.05fr);gap:clamp(70px,8vw,130px);padding:86px 0 52px;align-items:end}
+  .range-lead .display-serif{font-size:clamp(56px,4.6vw,76px);line-height:.98;max-width:760px}
+  .range-lead p:last-child{max-width:650px}
+  .application-head{grid-template-columns:minmax(470px,.9fr) minmax(420px,1.1fr);gap:clamp(70px,8vw,130px)}
+  .application-head h2{font-size:clamp(46px,4vw,60px);max-width:560px}
+  .story-long{grid-template-columns:minmax(430px,.9fr) minmax(0,1.1fr);gap:clamp(70px,8vw,130px)}
+  .story-long aside h2{font-size:clamp(52px,4.5vw,70px);line-height:1;max-width:620px}
+  .approved-copy{grid-template-columns:minmax(420px,.85fr) minmax(0,1.15fr);gap:clamp(70px,8vw,130px)}
+  .approved-copy aside h2{font-size:clamp(50px,4.25vw,66px);line-height:1;max-width:620px}
+  .contact-layout{grid-template-columns:minmax(430px,.85fr) minmax(0,1.15fr);gap:clamp(70px,8vw,130px)}
+  .contact-layout .display-serif{font-size:clamp(54px,4.8vw,76px);max-width:650px}
+  .manifesto-grid{grid-template-columns:minmax(560px,1fr) minmax(420px,.8fr);gap:clamp(70px,9vw,140px)}
+  .manifesto-grid .display-serif{max-width:760px}
+  .fpx-bridge{grid-template-columns:minmax(560px,1.15fr) minmax(360px,.85fr);gap:clamp(60px,7vw,110px)}
+  .fpx-bridge h2{max-width:720px}
+  .range-heading{gap:80px}
+  .range-heading>div{max-width:760px}
+  .range-heading .display-serif{max-width:760px}
+  .range-note{width:auto;max-width:430px}
+}
+
+/* Homepage product groups: keep each image inside its own card and away from the category number. */
+@media (min-width:981px){
+  .category-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:calc(100% - 48px);max-width:1500px;margin:72px auto 0;padding-left:0;overflow:visible;border-top:1px solid var(--line);border-right:1px solid var(--line)}
+  .category{min-width:0;width:auto;height:520px;border-left:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 26px 30px;overflow:hidden;position:relative}
+  .category-no{position:relative;z-index:2}
+  .category-art{height:245px;margin:18px 0 20px;overflow:hidden;position:relative;z-index:1}
+  .category-art img{width:100%;height:100%;display:block;object-fit:cover}
+  .category h3{font-size:clamp(26px,2.1vw,34px);line-height:1.02;margin:auto 0 12px}
+  .category-summary{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 20px;max-width:280px}
+  .drag-hint{display:none}
+  .range-footer{justify-content:flex-start;margin-top:44px}
+}
+
+/* Product bands: keep headings and descriptions visually connected and prevent lopsided whitespace. */
+@media (min-width:981px){
+  .band-top{grid-template-columns:minmax(460px,.85fr) minmax(430px,1.15fr);gap:clamp(60px,7vw,110px);align-items:end}
+  .band-title h2{font-size:clamp(46px,4vw,60px);line-height:1}
+  .band-top>p{max-width:620px}
+  .band-body{gap:28px}
+  .band-info{padding:28px}
+}
+
+/* Closing CTA: keep it bold, but not so large that the line breaks become awkward. */
+.closing{min-height:520px;padding:clamp(48px,5vw,76px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.closing h2{font-size:clamp(64px,6.1vw,96px);line-height:.92;letter-spacing:-.045em;max-width:1120px;margin:30px 0 42px;text-wrap:balance}
+.closing .button{margin-top:0}
+.closing-mark{right:clamp(28px,4vw,54px);bottom:clamp(24px,3vw,42px)}
+
+/* General spacing polish. */
+.section-pad{padding-top:clamp(95px,8vw,125px);padding-bottom:clamp(95px,8vw,125px)}
+.inner-hero,.contact-hero{margin-top:0}
+.inner-hero h1,.contact-hero h1{max-width:980px}
+.site-footer{column-gap:clamp(36px,5vw,70px)}
+
+/* Tablet: avoid squeezed two-column editorial layouts. */
+@media (max-width:1099px) and (min-width:701px){
+  .display-serif{font-size:clamp(48px,7vw,68px)}
+  .range-lead,.application-head,.story-long,.approved-copy,.contact-layout,.manifesto-grid,.fpx-bridge{grid-template-columns:1fr;gap:34px}
+  .story-long aside,.approved-copy aside{position:static}
+  .story-long aside h2,.approved-copy aside h2{max-width:760px}
+  .range-nav{margin-bottom:90px}
+  .closing{min-height:460px;padding:48px}
+  .closing h2{font-size:clamp(58px,8vw,76px);max-width:860px;margin:26px 0 36px}
+}
+
+/* Mobile: keep headlines readable instead of oversized and broken into single words. */
+@media (max-width:700px){
+  h1,h2,h3,.display-serif{overflow-wrap:normal;word-break:normal;hyphens:none}
+  .inner-hero h1,.contact-hero h1{font-size:clamp(48px,15vw,68px);line-height:.88}
+  .display-serif{font-size:clamp(42px,12vw,56px);line-height:1}
+  .range-lead{padding:58px 0 40px;gap:24px}
+  .range-lead .display-serif{font-size:clamp(44px,12vw,58px);line-height:1}
+  .range-nav{margin-bottom:72px}
+  .band-top{gap:22px;margin-bottom:30px}
+  .band-title{gap:14px}
+  .band-title h2{font-size:clamp(38px,10vw,48px)}
+  .application-section{padding:68px 0}
+  .application-head{margin-bottom:34px}
+  .application-head h2{font-size:clamp(38px,10vw,48px)}
+  .fpx-bridge{padding:64px 0 72px}
+  .fpx-bridge h2{font-size:clamp(38px,10vw,48px)}
+  .closing{min-height:420px;padding:32px}
+  .closing h2{font-size:clamp(42px,12vw,58px);line-height:.94;letter-spacing:-.035em;margin:24px 0 30px}
+  .closing-mark{position:static;margin-top:28px}
+  .category-summary{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 18px}
+}
+
+/* Presentation preview branch deployment trigger. */
