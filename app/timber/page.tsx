@@ -4,8 +4,10 @@ const groups = [
     number: "01",
     title: "Manufacturing",
     description: "Timber feedstock for wood processors and timber manufacturers to remanufacture into finished products.",
-    image: "/category-manufacturing.png",
-    secondary: "/category-untreated.png",
+    image: "/images/product-groups/manufacturing/industrial-stack-on-conveyor.jpg",
+    imageAlt: "Industrial stack of New Zealand radiata pine on a conveyor.",
+    secondary: "/images/product-groups/manufacturing/stacked-bundles-warehouse.jpg",
+    secondaryAlt: "Bundled radiata pine manufacturing timber in a warehouse.",
     categories: ["Clear 1", "Clear 2", "Mixed Clears", "Dressing", "Premium", "Cuttings 1–3", "COL", "Merch", "Industrial"],
     linkLabel: "View Manufacturing on FPX"
   },
@@ -14,8 +16,10 @@ const groups = [
     number: "02",
     title: "Building & Construction",
     description: "Timber products for structural, building, finishing and specialist construction applications.",
-    image: "/category-stress.png",
-    secondary: "/category-treated.png",
+    image: "/images/product-groups/building-construction/new-deck-frame-modern-home.jpg",
+    imageAlt: "Radiata pine deck framing under construction beside a modern home.",
+    secondary: "/images/product-groups/building-construction/elevated-house-foundation-view.jpg",
+    secondaryAlt: "Elevated house foundation using timber piles and structural timber.",
     categories: ["Structural Timber", "Weatherboards", "House Piles", "Ceiling Battens", "Tile Battens", "Mouldings", "Fascia", "Scaffold Planks", "Soleboards", "Kickboards", "Stair Treads"],
     linkLabel: "Browse Building & Construction on FPX"
   },
@@ -24,8 +28,10 @@ const groups = [
     number: "03",
     title: "Outdoor & Landscaping",
     description: "Treated and purpose-made timber for landscaping, fencing, retaining and outdoor construction.",
-    image: "/category-outdoor.png",
-    secondary: "/category-retaining.png",
+    image: "/images/product-groups/outdoor-landscaping/curved-boardwalk-lush-gardens.jpg",
+    imageAlt: "Curved timber boardwalk through landscaped grounds.",
+    secondary: "/images/product-groups/outdoor-landscaping/timber-fence-country-driveway.jpg",
+    secondaryAlt: "Rural timber post and rail fence beside a country driveway.",
     categories: ["Outdoor", "Posts", "Rails", "Palings", "Decking", "Retaining Boards", "Sleepers, Squares & Beams", "Screening", "Pickets", "Capping", "Fence Battens", "Trellis Battens", "Roundwood", "Pegs"],
     linkLabel: "Browse Outdoor & Landscaping on FPX"
   },
@@ -34,8 +40,10 @@ const groups = [
     number: "04",
     title: "Dunnage",
     description: "Timber dunnage for freight, shipping, load support and industrial transport applications.",
-    image: "/timber-packet.png",
-    secondary: "/category-treated.png",
+    image: "/images/product-groups/dunnage/radiata-pine-dunnage-supporting-cargo.jpg",
+    imageAlt: "Radiata pine dunnage supporting wrapped industrial cargo.",
+    secondary: "/images/product-groups/dunnage/stamped-pine-timber-stack.jpg",
+    secondaryAlt: "Stamped radiata pine dunnage stacked in a timber yard.",
     categories: ["Dunnage"],
     linkLabel: "View Dunnage on FPX"
   }
@@ -83,14 +91,14 @@ export default function Timber(){return <main>
       </div>
       <div className="band-body">
         <div className="band-gallery">
-          <figure><img src={group.image} alt={`${group.title} timber`}/><figcaption className="band-caption">{group.title}</figcaption></figure>
-          <figure><img src={group.secondary} alt={`${group.title} timber detail`}/></figure>
+          <figure><img src={group.image} alt={group.imageAlt} loading="lazy"/><figcaption className="band-caption">{group.title}</figcaption></figure>
+          <figure><img src={group.secondary} alt={group.secondaryAlt} loading="lazy"/></figure>
         </div>
         <div className="band-info">
           <p className="band-label">{group.id === "manufacturing" ? "Grades we commonly supply" : "Product categories"}</p>
           <div className="category-list">{group.categories.map((item)=><span key={item}>{item}</span>)}</div>
           <div className="band-link">
-            <small>{group.id === "manufacturing" ? "These grades show the breadth of what we supply. Current specifications and availability sit in FPX." : "Final category links will point straight to the matching FPX category."}</small>
+            <small>{group.id === "manufacturing" ? "These grades show the breadth of what we supply. Current specifications and availability sit in FPX." : "View current products, specifications and availability through FPX."}</small>
             <a className="button" href="https://app.fpx.nz/" target="_blank" rel="noreferrer">{group.linkLabel} ↗</a>
           </div>
         </div>
@@ -101,8 +109,8 @@ export default function Timber(){return <main>
   <section className="application-section">
     <div className="shell">
       <div className="application-head">
-        <div><p className="eyebrow light">End uses / applications</p><h2>Know the job,<br/>not the product name?</h2></div>
-        <p>Some customers know the job first and the product second. These application groups give them another way to find the right part of the range.</p>
+        <div><p className="eyebrow light">End uses / applications</p><h2>Start with<br/>the job.</h2></div>
+        <p>If you know the application first, these groups provide another way to find the right part of the range.</p>
       </div>
       <div className="application-grid">{applications.map(([name,detail],index)=><article className="application-card" key={name}><span>{String(index+1).padStart(2,"0")}</span><h3>{name}</h3><p>{detail}</p></article>)}</div>
     </div>
@@ -110,8 +118,8 @@ export default function Timber(){return <main>
 
   <section className="shell fpx-bridge">
     <div><p className="eyebrow">From range to stock</p><h2>See the range here.<br/>Check the detail in FPX.</h2><p>Sutcliffe Trading shows what we can source and supply. FPX is where you can check current products, stock, specifications and make an enquiry.</p></div>
-    <aside><p>Once the final FPX categories are set, each relevant category on this page can link directly to the right FPX view.</p><a className="button" href="https://app.fpx.nz/" target="_blank" rel="noreferrer">Explore FPX ↗</a></aside>
+    <aside><p>Use FPX to explore current products and specifications, then contact our team if you need help with a particular requirement.</p><a className="button" href="https://app.fpx.nz/" target="_blank" rel="noreferrer">Explore FPX ↗</a></aside>
   </section>
 
-  <section className="closing shell"><p className="eyebrow light">Need something specific?</p><h2>Tell us what<br/>you need.</h2><a className="button button-light" href="/contact">Start an enquiry</a><span className="closing-mark">Sutcliffe Trading</span></section>
+  <section className="closing shell"><p className="eyebrow light">Need something specific?</p><h2>Tell us what<br/>you need.</h2><a className="button button-light" href="/contact">Start an enquiry</a><img className="closing-logo" src="/brand/sutcliffe-logo-light-square.png" alt="" aria-hidden="true"/></section>
 </main>}
