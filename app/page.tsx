@@ -23,8 +23,8 @@ const featured = [
   {
     name:"Manufacturing",
     description:"Timber feedstock for wood processors and manufacturers.",
-    image:"/images/product-groups/manufacturing/leading-lines-radiata-pine.jpg",
-    imageAlt:"Freshly sawn New Zealand radiata pine manufacturing timber.",
+    image:"/images/product-groups/manufacturing/industrial-stack-on-conveyor.jpg",
+    imageAlt:"Radiata pine manufacturing timber stacked on a processing conveyor.",
     href:"/timber#manufacturing"
   },
   {
