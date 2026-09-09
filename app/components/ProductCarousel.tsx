@@ -3,7 +3,10 @@
 import { PointerEvent, useRef } from "react";
 
 type CarouselImage = {
-  src: string;
+  src?: string;
+  atlas?: string;
+  atlasIndex?: number;
+  atlasCount?: number;
   alt: string;
   label?: string;
 };
@@ -15,12 +18,12 @@ type ProductCarouselProps = {
 
 export default function ProductCarousel({ images, title }: ProductCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const drag = useRef({ active: false, startX: 0, startScroll: 0, moved: false });
+  const drag = useRef({ active: false, startX: 0, startScroll: 0 });
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     const track = trackRef.current;
     if (!track) return;
-    drag.current = { active: true, startX: event.clientX, startScroll: track.scrollLeft, moved: false };
+    drag.current = { active: true, startX: event.clientX, startScroll: track.scrollLeft };
     track.setPointerCapture(event.pointerId);
     track.classList.add("is-dragging");
   };
@@ -28,9 +31,7 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
   const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
     const track = trackRef.current;
     if (!track || !drag.current.active) return;
-    const distance = event.clientX - drag.current.startX;
-    if (Math.abs(distance) > 4) drag.current.moved = true;
-    track.scrollLeft = drag.current.startScroll - distance;
+    track.scrollLeft = drag.current.startScroll - (event.clientX - drag.current.startX);
   };
 
   const stopDragging = (event: PointerEvent<HTMLDivElement>) => {
@@ -65,12 +66,29 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
         onPointerCancel={stopDragging}
         onPointerLeave={(event) => drag.current.active && stopDragging(event)}
       >
-        {images.map((image, index) => (
-          <figure className="carousel-slide" key={`${image.src}-${index}`}>
-            <img src={image.src} alt={image.alt} draggable={false} loading={index < 2 ? "eager" : "lazy"} />
-            {(image.label || index === 0) && <figcaption className="band-caption">{image.label || title}</figcaption>}
-          </figure>
-        ))}
+        {images.map((image, index) => {
+          const isAtlas = Boolean(image.atlas && typeof image.atlasIndex === "number" && image.atlasCount);
+          const key = image.src || `${image.atlas}-${image.atlasIndex}`;
+          return (
+            <figure className="carousel-slide" key={`${key}-${index}`}>
+              {isAtlas ? (
+                <div
+                  className="carousel-atlas-image"
+                  role="img"
+                  aria-label={image.alt}
+                  style={{
+                    backgroundImage: `url(${image.atlas})`,
+                    backgroundSize: `${image.atlasCount! * 100}% 100%`,
+                    backgroundPosition: `${image.atlasCount === 1 ? 0 : (image.atlasIndex! / (image.atlasCount! - 1)) * 100}% 50%`,
+                  }}
+                />
+              ) : (
+                <img src={image.src} alt={image.alt} draggable={false} loading={index < 2 ? "eager" : "lazy"} />
+              )}
+              {(image.label || index === 0) && <figcaption className="band-caption">{image.label || title}</figcaption>}
+            </figure>
+          );
+        })}
       </div>
     </div>
   );
