@@ -8,16 +8,13 @@ export default function ScrollExperience() {
 
   useEffect(() => {
     const page = document.querySelector<HTMLElement>(".motion-page");
-
-    // Content is visible by default. Motion is only enabled after the current
-    // page has been found, so a script failure can never leave copy hidden.
     document.documentElement.classList.remove("motion-ready");
     if (!page) return;
 
     const reveals = Array.from(page.querySelectorAll<HTMLElement>(".reveal"));
     const staggerItems = Array.from(page.querySelectorAll<HTMLElement>(".motion-stagger > *"));
-
     const observed = Array.from(new Set([...reveals, ...staggerItems]));
+
     observed.forEach((el) => {
       el.classList.remove("is-visible");
       el.classList.remove("motion-item");

@@ -5,18 +5,8 @@ export const metadata: Metadata = {
   title: "About Sutcliffe Trading | NZ Timber Merchant Since 1988",
   description: "Sutcliffe Trading is a New Zealand timber merchant founded in 1988, supplying commercial buyers through long-standing mill relationships and practical timber knowledge.",
   alternates: { canonical: "/about" },
-  openGraph: {
-    title: "About Sutcliffe Trading | NZ Timber Merchant Since 1988",
-    description: "Meet Sutcliffe Trading, a New Zealand timber merchant supplying commercial buyers since 1988.",
-    url: "/about",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "About Sutcliffe Trading" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Sutcliffe Trading | NZ Timber Merchant Since 1988",
-    description: "New Zealand timber knowledge and supply relationships built since 1988.",
-    images: ["/og.png"],
-  },
+  openGraph: { title: "About Sutcliffe Trading | NZ Timber Merchant Since 1988", description: "Meet Sutcliffe Trading, a New Zealand timber merchant supplying commercial buyers since 1988.", url: "/about", images: [{ url: "/og.png", width: 1200, height: 630, alt: "About Sutcliffe Trading" }] },
+  twitter: { card: "summary_large_image", title: "About Sutcliffe Trading | NZ Timber Merchant Since 1988", description: "New Zealand timber knowledge and supply relationships built since 1988.", images: ["/og.png"] },
 };
 export default function About(){const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://www.sutcliffetrading.com/"},{"@type":"ListItem",position:2,name:"About",item:"https://www.sutcliffetrading.com/about"}]};return <main className="motion-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumb)}}/>
   <section className="inner-hero shell"><p className="eyebrow light">Our story</p><h1>About Sutcliffe Trading.<br/><em>Since 1988.</em></h1><p>New Zealand timber knowledge, long-standing relationships and straight answers since 1988.</p></section>

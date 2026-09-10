@@ -12,7 +12,6 @@ export default function ContactForm() {
     setStatus("sending");
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",

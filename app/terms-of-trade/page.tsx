@@ -128,33 +128,8 @@ export default function Terms() {
         <div style={{ maxWidth: "900px" }}>
           {sections.map((section) => (
             <section key={section.heading} aria-labelledby={`terms-${section.heading.split(".")[0]}`} style={{ marginBottom: "58px" }}>
-              <h2
-                id={`terms-${section.heading.split(".")[0]}`}
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(30px, 3vw, 42px)",
-                  lineHeight: 1.08,
-                  letterSpacing: "-0.03em",
-                  margin: "0 0 26px",
-                  color: "var(--ink)",
-                }}
-              >
-                {section.heading}
-              </h2>
-              {section.paragraphs.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  style={{
-                    fontSize: "16px",
-                    lineHeight: 1.75,
-                    margin: "0 0 18px",
-                    color: "var(--charcoal)",
-                  }}
-                >
-                  {paragraph}
-                </p>
-              ))}
+              <h2 id={`terms-${section.heading.split(".")[0]}`} style={{fontFamily:"Georgia, serif",fontWeight:400,fontSize:"clamp(30px, 3vw, 42px)",lineHeight:1.08,letterSpacing:"-0.03em",margin:"0 0 26px",color:"var(--ink)"}}>{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => (<p key={paragraph} style={{fontSize:"16px",lineHeight:1.75,margin:"0 0 18px",color:"var(--charcoal)"}}>{paragraph}</p>))}
             </section>
           ))}
         </div>

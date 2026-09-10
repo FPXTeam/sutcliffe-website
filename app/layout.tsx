@@ -35,12 +35,7 @@ export const metadata: Metadata = {
     description:
       "New Zealand-grown Radiata Pine backed by timber knowledge and established industry relationships since 1988.",
     images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Sutcliffe Trading, New Zealand timber trading since 1988",
-      },
+      { url: "/og.png", width: 1200, height: 630, alt: "Sutcliffe Trading, New Zealand timber trading since 1988" },
     ],
   },
   twitter: {

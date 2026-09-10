@@ -5,18 +5,8 @@ export const metadata: Metadata = {
   title: "Contact Sutcliffe Trading | Timber Enquiries NZ",
   description: "Send your timber grade, dimensions, volume, treatment and delivery point to Sutcliffe Trading. Our New Zealand timber team will respond directly.",
   alternates: { canonical: "/contact" },
-  openGraph: {
-    title: "Contact Sutcliffe Trading | Timber Enquiries NZ",
-    description: "Send Sutcliffe Trading your commercial timber requirement and our New Zealand timber team will respond directly.",
-    url: "/contact",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Contact Sutcliffe Trading for timber enquiries" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Sutcliffe Trading | Timber Enquiries NZ",
-    description: "Send your commercial timber requirement to the Sutcliffe Trading team.",
-    images: ["/og.png"],
-  },
+  openGraph: { title: "Contact Sutcliffe Trading | Timber Enquiries NZ", description: "Send Sutcliffe Trading your commercial timber requirement and our New Zealand timber team will respond directly.", url: "/contact", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Contact Sutcliffe Trading for timber enquiries" }] },
+  twitter: { card: "summary_large_image", title: "Contact Sutcliffe Trading | Timber Enquiries NZ", description: "Send your commercial timber requirement to the Sutcliffe Trading team.", images: ["/og.png"] },
 };
 
 export default function Contact(){

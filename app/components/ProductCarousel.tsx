@@ -3,12 +3,10 @@
 import { PointerEvent, useRef } from "react";
 
 type CarouselImage = {
-  src?: string;
-  atlas?: string;
-  atlasIndex?: number;
-  atlasCount?: number;
+  src: string;
   alt: string;
   label?: string;
+  fit?: "cover" | "contain";
 };
 
 type ProductCarouselProps = {
@@ -18,12 +16,12 @@ type ProductCarouselProps = {
 
 export default function ProductCarousel({ images, title }: ProductCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const drag = useRef({ active: false, startX: 0, startScroll: 0 });
+  const drag = useRef({ active: false, startX: 0, startScroll: 0, moved: false });
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     const track = trackRef.current;
     if (!track) return;
-    drag.current = { active: true, startX: event.clientX, startScroll: track.scrollLeft };
+    drag.current = { active: true, startX: event.clientX, startScroll: track.scrollLeft, moved: false };
     track.setPointerCapture(event.pointerId);
     track.classList.add("is-dragging");
   };
@@ -31,7 +29,9 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
   const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
     const track = trackRef.current;
     if (!track || !drag.current.active) return;
-    track.scrollLeft = drag.current.startScroll - (event.clientX - drag.current.startX);
+    const delta = event.clientX - drag.current.startX;
+    if (Math.abs(delta) > 3) drag.current.moved = true;
+    track.scrollLeft = drag.current.startScroll - delta;
   };
 
   const stopDragging = (event: PointerEvent<HTMLDivElement>) => {
@@ -45,7 +45,9 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
   const nudge = (direction: number) => {
     const track = trackRef.current;
     if (!track) return;
-    track.scrollBy({ left: direction * track.clientWidth * 0.78, behavior: "smooth" });
+    const firstSlide = track.querySelector<HTMLElement>(".carousel-slide");
+    const amount = firstSlide ? firstSlide.offsetWidth + 12 : track.clientWidth * 0.78;
+    track.scrollBy({ left: direction * amount, behavior: "smooth" });
   };
 
   return (
@@ -66,29 +68,18 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
         onPointerCancel={stopDragging}
         onPointerLeave={(event) => drag.current.active && stopDragging(event)}
       >
-        {images.map((image, index) => {
-          const isAtlas = Boolean(image.atlas && typeof image.atlasIndex === "number" && image.atlasCount);
-          const key = image.src || `${image.atlas}-${image.atlasIndex}`;
-          return (
-            <figure className="carousel-slide" key={`${key}-${index}`}>
-              {isAtlas ? (
-                <div
-                  className="carousel-atlas-image"
-                  role="img"
-                  aria-label={image.alt}
-                  style={{
-                    backgroundImage: `url(${image.atlas})`,
-                    backgroundSize: `${image.atlasCount! * 100}% 100%`,
-                    backgroundPosition: `${image.atlasCount === 1 ? 0 : (image.atlasIndex! / (image.atlasCount! - 1)) * 100}% 50%`,
-                  }}
-                />
-              ) : (
-                <img src={image.src} alt={image.alt} draggable={false} loading={index < 2 ? "eager" : "lazy"} />
-              )}
-              {(image.label || index === 0) && <figcaption className="band-caption">{image.label || title}</figcaption>}
-            </figure>
-          );
-        })}
+        {images.map((image, index) => (
+          <figure className="carousel-slide" key={`${image.src}-${index}`}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              draggable={false}
+              loading={index < 2 ? "eager" : "lazy"}
+              style={{ objectFit: image.fit || "cover" }}
+            />
+            {(image.label || index === 0) && <figcaption className="band-caption">{image.label || title}</figcaption>}
+          </figure>
+        ))}
       </div>
     </div>
   );
