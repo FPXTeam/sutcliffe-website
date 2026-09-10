@@ -112,18 +112,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>Contact</span>
             <a href="mailto:sales@sutcliffetrading.com">sales@sutcliffetrading.com</a>
             <a href="tel:+642108473262">+64 21 084 73262</a>
-            <p>Auckland, New Zealand</p>
+            <a href="https://share.google/KfADiFmeFpedG20pX" target="_blank" rel="noopener noreferrer">Auckland, New Zealand ↗</a>
           </div>
           <div>
             <span>Elsewhere</span>
             <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn ↗</a>
             <a href="https://www.fpx.nz/">FPX Sourcing ↗</a>
-            <Link href="/terms-of-trade">Terms of Trade</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/cookies">Cookie Policy</Link>
-            <CookieSettingsButton />
           </div>
-          <small>© 2026 Sutcliffe Trading</small>
+          <div className="footer-bottom">
+            <small>© 2026 Sutcliffe Trading</small>
+            <div className="footer-legal-links" aria-label="Legal links">
+              <Link href="/terms-of-trade">Terms of Trade</Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/cookies">Cookie Policy</Link>
+              <CookieSettingsButton />
+            </div>
+          </div>
         </footer>
       </body>
     </html>
