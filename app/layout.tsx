@@ -6,6 +6,8 @@ import "./site-audit.css";
 import "./brand-system.css";
 import "./motion.css";
 import ScrollExperience from "./components/ScrollExperience";
+import AnalyticsConsent, { CookieSettingsButton } from "./components/AnalyticsConsent";
+import "./legal.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sutcliffetrading.com"),
@@ -18,6 +20,9 @@ export const metadata: Metadata = {
   category: "Timber supply",
   robots: { index: true, follow: true },
   applicationName: "Sutcliffe Trading",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -65,6 +70,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Link className="header-cta" href="/contact">Request timber <span>↗</span></Link>
         </header>
         <ScrollExperience />
+        <AnalyticsConsent />
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
@@ -113,6 +119,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn ↗</a>
             <a href="https://www.fpx.nz/">FPX Sourcing ↗</a>
             <Link href="/terms-of-trade">Terms of Trade</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/cookies">Cookie Policy</Link>
+            <CookieSettingsButton />
           </div>
           <small>© 2026 Sutcliffe Trading</small>
         </footer>

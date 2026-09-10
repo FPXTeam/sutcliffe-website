@@ -34,6 +34,7 @@ export default function ContactForm() {
       <label className="full">Company<input autoComplete="organization" type="text" name="company" /></label>
       <label className="full">Timber requirement<textarea required name="message" rows={6} /></label>
       <input className="hp-field" type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+      <p className="contact-privacy-note">We use the information you provide to respond to your enquiry. See our <a href="/privacy">Privacy Policy</a>.</p>
       <button className="button button-dark" type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send enquiry ↗"}
       </button>
