@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sutcliffe Trading",
+  title: "Privacy Policy",
   description: "How Sutcliffe Trading Limited collects, uses, stores and protects personal information when you use our website or contact our team.",
   alternates: { canonical: "/privacy" },
 };

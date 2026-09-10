@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Trade | Sutcliffe Trading",
+  title: "Terms of Trade",
   description: "Sutcliffe Trading Limited Terms of Trade for customers purchasing goods and services in New Zealand.",
   alternates: { canonical: "/terms-of-trade" },
   robots: { index: true, follow: true },

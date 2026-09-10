@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "New Zealand Radiata Pine Timber Supplier | Sutcliffe Trading",
+  title: "New Zealand Radiata Pine Timber Supplier",
   description: "Sutcliffe Trading supplies New Zealand-grown Radiata Pine for manufacturing, building and construction, outdoor and landscaping, and dunnage applications nationwide.",
   alternates: { canonical: "/" },
   openGraph: { title: "New Zealand Radiata Pine Timber Supplier | Sutcliffe Trading", description: "New Zealand-grown Radiata Pine supplied for manufacturing, construction, outdoor, landscaping and dunnage applications nationwide.", url: "/", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Sutcliffe Trading, New Zealand Radiata Pine timber supplier" }] },
@@ -16,7 +16,7 @@ const featured = [
   { name:"Dunnage", description:"Timber for freight, shipping, load support and industrial transport.", image:"/images/product-groups/dunnage/industrial-cargo-on-timber-dunnage.jpg", imageAlt:"Radiata pine dunnage supporting industrial cargo.", href:"/timber#dunnage" },
 ];
 const faqs = [
-  ["What species do you trade?","We specialise in New Zealand-grown Radiata Pine across appearance, manufacturing, packaging, outdoor and structural grades."],
+  ["What species do you trade?","We specialise in New Zealand-grown Radiata Pine across manufacturing, building and construction, outdoor and landscaping, and dunnage applications."],
   ["How does Sutcliffe Trading source timber?","Sutcliffe Trading is an independent timber merchant. We source through established relationships with New Zealand sawmills and manufacturers."],
   ["What is the minimum order?","Orders are generally supplied by packet or commercial volume. Send us the grade, dimensions, volume and delivery point and we will confirm what is possible."],
   ["Can you supply certified timber?","Yes. FSC® certified timber and chain-of-custody documentation are available for qualifying orders. Our certificate and core labour requirements policy are available on request."],

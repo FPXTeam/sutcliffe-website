@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProductCarousel from "../components/ProductCarousel";
 
 export const metadata: Metadata = {
-  title: "Radiata Pine Timber Supply NZ | Sutcliffe Trading",
+  title: "Radiata Pine Timber Supply NZ",
   description: "Explore New Zealand Radiata Pine for manufacturing, building and construction, outdoor and landscaping, and dunnage applications through Sutcliffe Trading.",
   alternates: { canonical: "/timber" },
   openGraph: {
@@ -29,13 +29,13 @@ const groups: ProductGroup[] = [
     {src:"/images/product-groups/manufacturing/carousel/mfg-board-perspective.jpg",alt:"Radiata pine manufacturing boards shown in perspective."},
     {src:"/images/product-groups/manufacturing/carousel/mfg-bundle.jpg",alt:"Radiata pine manufacturing timber bundle."},
     {src:"/images/product-groups/manufacturing/carousel/mfg-end-grain.jpg",alt:"Stacked radiata pine end-grain timber blocks."},
-    {src:"/images/product-groups/manufacturing/carousel/mfg-lumber-bundles.jpg",alt:"Stacked radiata pine lumber bundles."},
+    {src:"/images/product-groups/manufacturing/carousel/mfg-timber-bundles.jpg",alt:"Stacked Radiata Pine timber bundles."},
     {src:"/images/product-groups/manufacturing/carousel/mfg-mill-line.jpg",alt:"Radiata pine boards on a timber mill line."},
-    {src:"/images/product-groups/manufacturing/carousel/mfg-shrinkwrapped.jpg",alt:"Shrink-wrapped radiata pine lumber stacks."},
+    {src:"/images/product-groups/manufacturing/carousel/mfg-shrinkwrapped.jpg",alt:"Shrink-wrapped Radiata Pine timber stacks."},
     {src:"/images/product-groups/manufacturing/carousel/mfg-stacked-boards.jpg",alt:"Neatly stacked radiata pine timber boards."},
-    {src:"/images/product-groups/manufacturing/carousel/mfg-sunlight.jpg",alt:"Radiata pine lumber stack in natural sunlight."},
+    {src:"/images/product-groups/manufacturing/carousel/mfg-sunlight.jpg",alt:"Radiata Pine timber stack in natural sunlight."},
     {src:"/images/product-groups/manufacturing/carousel/mfg-warehouse.jpg",alt:"Radiata pine timber bundles stored in a warehouse."},
-    {src:"/images/product-groups/manufacturing/carousel/mfg-yard.jpg",alt:"Radiata pine lumber bundles in a timber yard."}
+    {src:"/images/product-groups/manufacturing/carousel/mfg-yard.jpg",alt:"Radiata Pine timber bundles in a timber yard."}
   ], categories:["Clear 1","Clear 2","Mixed Clears","Dressing","Premium","Cuttings 1–3","COL","Merch","Industrial"], linkLabel:"View Manufacturing on FPX" },
   { id:"building", number:"02", title:"Building & Construction", description:"Timber products for structural, building, finishing and specialist construction applications.", image:"/images/product-groups/building-construction/new-deck-frame-modern-home.jpg", imageAlt:"Radiata pine deck framing under construction beside a modern home.", secondary:"/images/product-groups/building-construction/elevated-house-foundation-view.jpg", secondaryAlt:"Elevated house foundation using timber piles and structural timber.", images:[
     {src:"/images/product-groups/building-construction/carousel/building-construction-01-treated-pine-timber-bundle.webp",alt:"Treated Radiata Pine building timber bundle.",label:"Building & Construction",fit:"contain"},
@@ -43,10 +43,10 @@ const groups: ProductGroup[] = [
     {src:"/images/product-groups/building-construction/carousel/building-construction-03-close-up-red-treated-timber-stack.webp",alt:"Close-up of red treated Radiata Pine structural timber.",fit:"contain"},
     {src:"/images/product-groups/building-construction/carousel/building-construction-04-pressure-treated-timber-bundle.webp",alt:"Pressure-treated Radiata Pine building timber bundle.",fit:"contain"},
     {src:"/images/product-groups/building-construction/carousel/building-construction-05-three-timber-boards-close-up.webp",alt:"Radiata Pine construction boards shown in perspective.",fit:"contain"},
-    {src:"/images/product-groups/building-construction/carousel/building-construction-06-treated-timber-lumber-stack.webp",alt:"Treated Radiata Pine lumber stack for construction applications.",fit:"contain"},
+    {src:"/images/product-groups/building-construction/carousel/building-construction-06-treated-timber-timber-stack.webp",alt:"Treated Radiata Pine timber stack for construction applications.",fit:"contain"},
     {src:"/images/product-groups/building-construction/carousel/building-construction-07-treated-timber-bundle-teal-strap.webp",alt:"Treated Radiata Pine timber bundle secured with teal strapping.",fit:"contain"},
     {src:"/images/product-groups/building-construction/carousel/building-construction-08-teal-strapped-pine-timber-bundle.webp",alt:"Radiata Pine building timber bundle with teal strapping.",fit:"contain"},
-    {src:"/images/product-groups/building-construction/carousel/building-construction-09-pink-treated-lumber-bundle.webp",alt:"Pink treated Radiata Pine lumber bundle for building applications.",fit:"contain"}
+    {src:"/images/product-groups/building-construction/carousel/building-construction-09-pink-treated-timber-bundle.webp",alt:"Pink treated Radiata Pine timber bundle for building applications.",fit:"contain"}
   ], categories:["Structural Timber","Weatherboards","House Piles","Ceiling Battens","Tile Battens","Mouldings","Fascia","Scaffold Planks","Soleboards","Kickboards","Stair Treads"], linkLabel:"Browse Building & Construction on FPX" },
   { id:"outdoor", number:"03", title:"Outdoor & Landscaping", description:"Treated and purpose-made timber for landscaping, fencing, retaining and outdoor construction.", image:"/images/product-groups/outdoor-landscaping/products/out-cladding.jpg", imageAlt:"Treated radiata pine outdoor timber product.", secondary:"/images/product-groups/outdoor-landscaping/products/out-decking.jpg", secondaryAlt:"Treated radiata pine decking product.", images:[
     {src:"/images/product-groups/outdoor-landscaping/products/out-boards.jpg",alt:"Stacked treated radiata pine timber boards.",label:"Outdoor & Landscaping",fit:"contain"},

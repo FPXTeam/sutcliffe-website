@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CookieSettingsButton } from "../components/AnalyticsConsent";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Sutcliffe Trading",
+  title: "Cookie Policy",
   description: "Information about essential browser storage and optional Google Analytics cookies used by the Sutcliffe Trading website.",
   alternates: { canonical: "/cookies" },
 };
