@@ -39,3 +39,97 @@
 @media(max-width:560px){.supply-groups,.spec-strip{grid-template-columns:1fr}.supply-groups article{min-height:auto}.story-long article{font-size:18px}}
 .legacy-photo{margin:0;display:block;position:relative;background:var(--paper)}.legacy-photo img{width:100%;height:650px;max-width:100%;margin:0;display:block;object-fit:cover;object-position:center 25%;filter:saturate(.82) contrast(1.02);transform:none}.legacy-photo figcaption{position:absolute;left:20px;bottom:18px;background:rgba(250,248,242,.9);padding:10px 13px;font-size:11px;text-transform:uppercase;letter-spacing:.11em}
 @media(max-width:900px){.legacy-photo img{height:520px}}
+
+
+/* Sustainability page — mobile-only layout hardening.
+   Approved FSC copy is untouched; these rules only improve small-screen layout. */
+@media(max-width:900px){
+  .sustainability-hero{
+    min-height:560px;
+    padding:36px 24px;
+    justify-content:flex-end;
+  }
+  .sustainability-hero h1{
+    font-size:clamp(46px,13vw,65px);
+    line-height:.9;
+    overflow-wrap:anywhere;
+  }
+  .sustainability-hero>p,
+  .sustainability-hero>h1{
+    max-width:100%;
+  }
+  .approved-copy{
+    grid-template-columns:minmax(0,1fr);
+    gap:42px;
+  }
+  .approved-copy aside,
+  .approved-copy article{
+    min-width:0;
+  }
+  .approved-copy aside h2{
+    font-size:clamp(40px,11vw,48px);
+    overflow-wrap:anywhere;
+  }
+  .approved-copy article{
+    font-size:17px;
+    line-height:1.7;
+    overflow-wrap:break-word;
+  }
+  .approved-copy article .actions{
+    width:100%;
+    gap:22px;
+  }
+  .approved-copy article .button,
+  .approved-copy article .text-link{
+    max-width:100%;
+    white-space:normal;
+  }
+  .fsc-certification-logo{
+    width:min(210px,68vw);
+  }
+}
+
+@media(max-width:560px){
+  .sustainability-hero{
+    min-height:500px;
+    padding:30px 18px;
+    background-position:40% center;
+  }
+  .sustainability-hero h1{
+    font-size:clamp(42px,14vw,56px);
+    margin-top:24px;
+  }
+  .approved-copy.section-pad{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+  .approved-copy{
+    gap:34px;
+  }
+  .approved-copy aside h2{
+    font-size:clamp(36px,11vw,44px);
+    margin-top:20px;
+  }
+  .approved-copy article{
+    font-size:16px;
+    line-height:1.68;
+  }
+  .approved-copy article p{
+    margin-bottom:24px;
+  }
+  .approved-copy article .actions{
+    align-items:stretch;
+  }
+  .approved-copy article .button{
+    width:100%;
+    padding-inline:18px;
+    text-align:center;
+  }
+  .approved-copy article .text-link{
+    display:block;
+    line-height:1.5;
+  }
+  .closing.shell{
+    padding:30px 22px;
+  }
+}

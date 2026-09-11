@@ -1,4 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Sustainability",
+  description:
+    "Learn about Sutcliffe Trading's FSC® certified timber, carbon sequestration and sustainable resource management in New Zealand.",
+  alternates: {
+    canonical: "/sustainability",
+  },
+  openGraph: {
+    title: "Sustainability | Sutcliffe Trading",
+    description:
+      "Learn about Sutcliffe Trading's FSC® certified timber, carbon sequestration and sustainable resource management in New Zealand.",
+    url: "/sustainability",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sustainability | Sutcliffe Trading",
+    description:
+      "Learn about Sutcliffe Trading's FSC® certified timber, carbon sequestration and sustainable resource management in New Zealand.",
+  },
+};
+
 export default function Sustainability(){return <main>
   <section className="inner-hero shell sustainability-hero"><p className="eyebrow light">Sustainability at Sutcliffe Trading</p><h1>Responsible<br/><em>by requirement.</em></h1><p>Sustainably sourced forest products, responsible management and a renewable New Zealand resource.</p></section>
   <section className="approved-copy shell section-pad"><aside><p className="eyebrow">01 · Certification</p><h2 className="display-serif">FSC® Certified Timber</h2><img className="fsc-certification-logo" src="/fsc-c189678-green-white.png" alt="FSC certification logo, licence number FSC C189678. Ask for our FSC-certified materials." /></aside><article><p>Sutcliffe Trading is committed to sustainably sourcing forest products from responsible forest management.</p><p>The timber we provide, bearing the FSC label, is cultivated, processed, and transported in strict adherence to the rigorous standards set by the FSC.</p><p>By obtaining FSC certification, our clients have the opportunity to designate their products accordingly, empowering consumers to make conscious decisions in favor of sustainably governed forests.</p><p>We have a policy to show our commitment to core labour requirements which is available on request as well as our FSC certificate.</p><div className="actions"><Link className="button button-dark" href="/contact">Request our FSC Certificate</Link><Link className="text-link" href="/contact">Request our Core Labour Requirements Policy <span>↗</span></Link></div></article></section>
