@@ -13,7 +13,7 @@ export default function CookiePolicy() {
       <section className="legal-hero shell">
         <p className="eyebrow">Privacy choices</p>
         <h1>Cookie Policy</h1>
-        <p className="legal-updated">Last updated 10 September 2026</p>
+        <p className="legal-updated">Last updated 17 September 2026</p>
       </section>
 
       <section className="legal-content shell">
