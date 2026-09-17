@@ -5,6 +5,7 @@ import "./pages.css";
 import "./site-audit.css";
 import "./brand-system.css";
 import "./motion.css";
+import "./mobile-navigation.css";
 import ScrollExperience from "./components/ScrollExperience";
 import MobileNavigation from "./components/MobileNavigation";
 import AnalyticsConsent, { CookieSettingsButton } from "./components/AnalyticsConsent";
@@ -68,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/sustainability">Sustainability</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <Link className="header-cta" href="/contact">Request timber <span>↗</span></Link>
+          <Link className="header-cta" href="/contact">Request timber <span className="header-cta-arrow" aria-hidden="true">→</span></Link>
           <MobileNavigation />
         </header>
         <ScrollExperience />

@@ -1,0 +1,212 @@
+/* Mobile navigation
+   Loaded after the site's existing styles so legacy header media rules
+   cannot move the menu control onto a second grid row. */
+
+.mobile-navigation {
+  display: none;
+}
+
+.header-cta-arrow {
+  display: inline-block;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto auto !important;
+    column-gap: 8px;
+    align-items: center;
+  }
+
+  .site-header > nav {
+    display: none !important;
+  }
+
+  .site-header > .brand {
+    min-width: 0;
+  }
+
+  .site-header > .header-cta {
+    justify-self: end;
+    white-space: nowrap;
+  }
+
+  .mobile-navigation {
+    display: block !important;
+    position: static;
+    justify-self: end;
+    color: var(--ink);
+  }
+
+  .mobile-navigation-toggle {
+    appearance: none;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 10002;
+  }
+
+  .mobile-navigation-icon {
+    width: 16px;
+    height: 14px;
+    display: block;
+    position: relative;
+  }
+
+  .mobile-navigation-icon > span {
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: currentColor;
+    transform-origin: center;
+    transition: top .2s ease, transform .2s ease;
+  }
+
+  .mobile-navigation-icon > span:first-child {
+    top: 4px;
+  }
+
+  .mobile-navigation-icon > span:last-child {
+    top: 9px;
+  }
+
+  .mobile-navigation.is-open .mobile-navigation-icon > span:first-child {
+    top: 6px;
+    transform: rotate(45deg);
+  }
+
+  .mobile-navigation.is-open .mobile-navigation-icon > span:last-child {
+    top: 6px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-navigation-panel {
+    position: fixed;
+    top: 76px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 8px;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 22px 55px rgba(6, 38, 31, .20);
+    z-index: 10001;
+  }
+
+  .mobile-navigation-panel[hidden] {
+    display: none !important;
+  }
+
+  .site-header .mobile-navigation-panel .mobile-navigation-links {
+    display: flex !important;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0 !important;
+    margin: 0;
+    padding: 0;
+    color: var(--ink) !important;
+    font-size: 17px;
+  }
+
+  .site-header .mobile-navigation-panel .mobile-navigation-links > a {
+    display: flex !important;
+    min-height: 58px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink) !important;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .site-header .mobile-navigation-panel .mobile-navigation-links > a:last-child {
+    border-bottom: 0;
+  }
+
+  .site-header .mobile-navigation-panel .mobile-navigation-links > a::after {
+    display: none !important;
+  }
+
+  .site-header .mobile-navigation-panel .mobile-navigation-links > a[aria-current="page"] {
+    background: rgba(11, 48, 40, .055);
+  }
+
+  .mobile-navigation-label {
+    display: block !important;
+    flex: 1 1 auto;
+    color: var(--ink) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-align: left;
+  }
+
+  .mobile-navigation-arrow {
+    display: inline-block !important;
+    flex: 0 0 auto;
+    color: var(--ink) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-header {
+    column-gap: 6px;
+  }
+
+  .site-header .brand img {
+    width: 118px;
+    height: 44px;
+  }
+
+  .site-header > .header-cta {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .site-header > .header-cta span {
+    margin-left: 8px;
+  }
+
+  .mobile-navigation-toggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-navigation {
+    display: none !important;
+  }
+}

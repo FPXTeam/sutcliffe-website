@@ -24,40 +24,42 @@ export default function MobileNavigation() {
   useEffect(() => {
     if (!open) return;
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-      }
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
     };
 
-    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+    const closeOnOutsidePress = (event: MouseEvent | TouchEvent) => {
       if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("mousedown", handlePointerDown);
-    document.addEventListener("touchstart", handlePointerDown);
+    document.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("mousedown", closeOnOutsidePress);
+    document.addEventListener("touchstart", closeOnOutsidePress);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("mousedown", handlePointerDown);
-      document.removeEventListener("touchstart", handlePointerDown);
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("mousedown", closeOnOutsidePress);
+      document.removeEventListener("touchstart", closeOnOutsidePress);
     };
   }, [open]);
 
   return (
-    <div ref={rootRef} className={`mobile-nav${open ? " is-open" : ""}`}>
+    <div ref={rootRef} className={`mobile-navigation${open ? " is-open" : ""}`}>
       <button
         type="button"
-        className="mobile-nav-toggle"
+        className="mobile-navigation-toggle"
         aria-label={open ? "Close navigation" : "Open navigation"}
         aria-expanded={open}
         aria-controls="mobile-navigation-panel"
         onClick={() => setOpen((current) => !current)}
       >
-        <span className="mobile-nav-icon" aria-hidden="true">
+        <span className="mobile-navigation-icon" aria-hidden="true">
           <span />
           <span />
         </span>
@@ -65,10 +67,10 @@ export default function MobileNavigation() {
 
       <div
         id="mobile-navigation-panel"
-        className="mobile-nav-panel"
+        className="mobile-navigation-panel"
         hidden={!open}
       >
-        <nav className="mobile-nav-links" aria-label="Mobile navigation">
+        <nav className="mobile-navigation-links" aria-label="Mobile navigation">
           {links.map((link) => {
             const active =
               link.href === "/"
@@ -82,8 +84,8 @@ export default function MobileNavigation() {
                 aria-current={active ? "page" : undefined}
                 onClick={() => setOpen(false)}
               >
-                <span>{link.label}</span>
-                <span aria-hidden="true">↗</span>
+                <span className="mobile-navigation-label">{link.label}</span>
+                <span className="mobile-navigation-arrow" aria-hidden="true">→</span>
               </Link>
             );
           })}
