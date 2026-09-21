@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../pages.css";
 
 export const metadata: Metadata = {
   title: "Terms of Trade",
