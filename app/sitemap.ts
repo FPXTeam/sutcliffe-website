@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/timber/building-construction`, lastModified: updated },
     { url: `${base}/timber/outdoor-landscaping`, lastModified: updated },
     { url: `${base}/timber/dunnage`, lastModified: updated },
+    { url: `${base}/timber/how-to-specify-a-timber-enquiry`, lastModified: updated },
     { url: `${base}/about`, lastModified: updated },
     { url: `${base}/sustainability`, lastModified: updated },
     { url: `${base}/contact`, lastModified: updated },
