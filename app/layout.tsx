@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="site-header shell">
           <Link className="brand" href="/" aria-label="Sutcliffe Trading home">
-            <Image src="/brand/sutcliffe-logo-original-horizontal.png" alt="Sutcliffe Trading" width={2048} height={682} sizes="(max-width: 900px) 142px, 188px" priority />
+            <Image src="/brand/sutcliffe-logo-original-horizontal.png" alt="Sutcliffe Trading" width={2048} height={682} sizes="(max-width: 900px) 142px, 188px" loading="eager" />
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/">Home</Link>
