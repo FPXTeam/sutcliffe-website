@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "../../pages.css";
 
 export const metadata: Metadata = {
   title: { absolute: "How to Specify a Timber Enquiry | Sutcliffe Trading NZ" },
