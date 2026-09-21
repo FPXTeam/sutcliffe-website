@@ -81,12 +81,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "@type": "Organization",
               "@id": "https://www.sutcliffetrading.com/#organization",
               name: "Sutcliffe Trading",
+              legalName: "Sutcliffe Trading Limited",
+              description: "New Zealand timber merchant supplying New Zealand-grown Radiata Pine through established sawmill and manufacturing relationships.",
               url: "https://www.sutcliffetrading.com/",
               logo: "https://www.sutcliffetrading.com/brand/sutcliffe-logo-original-square.png",
               foundingDate: "1988",
+              founder: { "@type": "Person", name: "Bill Sutcliffe" },
               email: "sales@sutcliffetrading.com",
               telephone: "+64 21 084 73262",
+              address: { "@type": "PostalAddress", addressLocality: "Auckland", addressCountry: "NZ" },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                telephone: "+64 21 084 73262",
+                email: "sales@sutcliffetrading.com",
+                areaServed: "NZ",
+                availableLanguage: "English"
+              },
               areaServed: { "@type": "Country", name: "New Zealand" },
+              knowsAbout: ["Radiata Pine", "timber supply", "manufacturing timber", "building and construction timber", "outdoor and landscaping timber", "timber dunnage"],
               sameAs: ["https://www.linkedin.com/company/sutcliffe-trading/"]
             },
             {
