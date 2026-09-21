@@ -204,7 +204,7 @@
 
 /* Timber knowledge pages */
 .knowledge-hero{padding-top:100px;padding-bottom:95px;max-width:1180px}
-.knowledge-hero h1{font:800 clamp(64px,8vw,118px)/.86 Arial,Helvetica,sans-serif;letter-spacing:-.065em;text-transform:uppercase;margin:28px 0}
+.knowledge-date{font-size:12px;color:var(--muted);margin:12px 0 0}.knowledge-hero h1{font:800 clamp(64px,8vw,118px)/.86 Arial,Helvetica,sans-serif;letter-spacing:-.065em;text-transform:uppercase;margin:28px 0}
 .knowledge-hero h1 em{font:400 italic .9em Georgia,serif;text-transform:none}
 .knowledge-lede{font:21px/1.62 Georgia,serif;max-width:820px;color:var(--muted)}
 .knowledge-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:9vw}
