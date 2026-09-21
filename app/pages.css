@@ -133,3 +133,36 @@
     padding:30px 22px;
   }
 }
+
+
+/* Optimized full-bleed page heroes served through next/image. */
+.page-hero-image{object-fit:cover;object-position:center;z-index:0}
+.inner-hero:before,.contact-hero:before{z-index:1}
+.inner-hero>*:not(.page-hero-image),.contact-hero>*:not(.page-hero-image){position:relative;z-index:2}
+
+.timber-hero{background-color:#06271f;background-image:none}
+.timber-hero .page-hero-image{display:block;object-fit:cover;object-position:center;filter:none}
+.timber-hero:before{background:linear-gradient(90deg,rgba(3,27,21,.96) 0%,rgba(3,27,21,.88) 38%,rgba(3,27,21,.38) 62%,rgba(3,27,21,.12) 100%),linear-gradient(180deg,rgba(3,22,18,.08),rgba(3,22,18,.28)),radial-gradient(circle at 78% 42%,rgba(190,153,89,.10),transparent 34%)}
+
+.sustainability-hero{background-color:#143c2c;background-image:none}
+.sustainability-hero-image{object-position:center}
+.sustainability-hero:before{background:linear-gradient(90deg,rgba(5,39,29,.34) 0%,rgba(5,39,29,.57) 48%,rgba(5,39,29,.93) 100%),linear-gradient(180deg,rgba(4,28,21,.10),rgba(4,28,21,.35))}
+
+.contact-hero{background-color:#28291f;background-image:none}
+.contact-hero-image{object-position:center}
+.contact-hero:before{background:linear-gradient(90deg,rgba(15,28,23,.91) 0%,rgba(20,31,25,.72) 42%,rgba(20,24,20,.67) 100%),radial-gradient(circle at 84% 30%,rgba(197,164,103,.18),transparent 34%)}
+
+.legacy-photo{min-height:650px}
+.legacy-photo img{object-fit:cover;object-position:center 25%}
+
+@media(max-width:900px){
+  .timber-hero-image{object-position:67% center}
+  .timber-hero:before{background:linear-gradient(180deg,rgba(3,27,21,.94) 0%,rgba(3,27,21,.82) 52%,rgba(3,27,21,.34) 100%),radial-gradient(circle at 78% 42%,rgba(190,153,89,.10),transparent 34%)}
+  .sustainability-hero-image{object-position:44% center}
+  .sustainability-hero:before{background:linear-gradient(180deg,rgba(5,39,29,.80),rgba(5,39,29,.58))}
+  .contact-hero-image{object-position:58% center}
+  .legacy-photo{min-height:520px}
+}
+@media(max-width:560px){
+  .sustainability-hero-image{object-position:40% center}
+}
