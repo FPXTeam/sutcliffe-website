@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ProductCarousel from "../components/ProductCarousel";
+import "../pages.css";
 
 export const metadata: Metadata = {
   title: "Radiata Pine Timber Supply NZ",
