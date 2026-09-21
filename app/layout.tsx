@@ -58,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-NZ">
       <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <header className="site-header shell">
           <Link className="brand" href="/" aria-label="Sutcliffe Trading home">
             <Image src="/brand/sutcliffe-logo-original-horizontal.png" alt="Sutcliffe Trading" width={2048} height={682} sizes="(max-width: 900px) 142px, 188px" loading="eager" fetchPriority="low" />
@@ -73,7 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <MobileNavigation />
         </header>
         <AnalyticsConsent />
-        {children}
+        <div id="main-content" tabIndex={-1}>{children}</div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
