@@ -41,7 +41,7 @@ export default function TimberEnquiryGuide(){
   return <main className="motion-page knowledge-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>
     <header className="knowledge-hero shell">
-      <p className="eyebrow">Timber buyer guide · Sutcliffe Trading</p>
+      <p className="eyebrow">Timber buyer guide · Sutcliffe Trading</p><p className="knowledge-date">Published 21 September 2026</p>
       <h1>How to specify<br/><em>a timber enquiry.</em></h1>
       <p className="knowledge-lede">For a useful first response, include the product or grade, dimensions, quantity or volume, treatment requirement and delivery point. If some of those details are still open, describe the application and our team can help narrow the requirement.</p>
       <div className="actions"><Link className="button button-dark" href="/contact">Send an enquiry</Link><Link className="text-link" href="/timber">View timber range <span>→</span></Link></div>
