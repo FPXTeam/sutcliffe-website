@@ -135,7 +135,7 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
         <p>{group.intro}</p>
         <div className="actions"><Link className="button button-dark" href="/contact">Send a timber enquiry</Link><Link className="text-link" href="/timber">View full timber range <span>→</span></Link></div>
       </div>
-      <figure><Image src={group.image} alt={group.imageAlt} fill priority sizes="(max-width: 900px) 100vw, 48vw"/></figure>
+      <figure><Image src={group.image} alt={group.imageAlt} fill priority fetchPriority="high" decoding="sync" sizes="(max-width: 900px) 100vw, 48vw"/></figure>
     </section>
 
     <section className="timber-detail-grid shell section-pad reveal">
