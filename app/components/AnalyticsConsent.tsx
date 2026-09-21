@@ -83,6 +83,29 @@ export default function AnalyticsConsent() {
   }, [showDialog, settingsOpen, choice]);
 
   useEffect(() => {
+    if (!analyticsAllowed || !document.referrer) return;
+
+    const referrer = document.referrer.toLowerCase();
+    const sources: Array<[string, string]> = [
+      ["chatgpt.com", "chatgpt"],
+      ["perplexity.ai", "perplexity"],
+      ["gemini.google.com", "gemini"],
+      ["copilot.microsoft.com", "microsoft_copilot"],
+    ];
+    const match = sources.find(([host]) => referrer.includes(host));
+    if (!match) return;
+
+    const timer = window.setTimeout(() => {
+      gtagEvent("ai_referral_visit", {
+        ai_source: match[1],
+        referrer: document.referrer,
+      });
+    }, 1200);
+
+    return () => window.clearTimeout(timer);
+  }, [analyticsAllowed]);
+
+  useEffect(() => {
     if (!analyticsAllowed) return;
 
     const trackOutbound = (event: MouseEvent) => {
