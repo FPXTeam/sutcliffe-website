@@ -26,7 +26,7 @@
 .consent-links a,.consent-links button{text-decoration:underline;text-underline-offset:3px}
 .consent-links button,.footer-legal-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 .footer-legal-button{text-align:left;display:block;margin:0 0 8px}
-.footer-legal-button:hover{color:var(--brass)}
+.footer-legal-button:hover{color:var(--brass-accessible)}
 .contact-privacy-note{grid-column:1/-1;margin:4px 0 2px;font-size:12px;line-height:1.55;color:var(--muted)}
 .contact-privacy-note a{text-decoration:underline;text-underline-offset:3px}
 
