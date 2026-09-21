@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { PointerEvent, useRef } from "react";
 
 type CarouselImage = {
@@ -70,11 +71,13 @@ export default function ProductCarousel({ images, title }: ProductCarouselProps)
       >
         {images.map((image, index) => (
           <figure className="carousel-slide" key={`${image.src}-${index}`}>
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
+              fill
+              sizes="(max-width: 620px) 88vw, (max-width: 980px) 74vw, 55vw"
               draggable={false}
-              loading={index < 2 ? "eager" : "lazy"}
+              loading="lazy"
               style={{ objectFit: image.fit || "cover" }}
             />
             {(image.label || index === 0) && <figcaption className="band-caption">{image.label || title}</figcaption>}
