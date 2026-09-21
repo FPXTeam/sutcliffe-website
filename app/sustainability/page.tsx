@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: "Sustainable Timber & FSC® Certification NZ | Sutcliffe Trading",
     description:
       "Learn about Sutcliffe Trading's FSC® certified timber, carbon sequestration and sustainable resource management in New Zealand.",
+    images: ["/sustainability-canopy.jpg"],
   },
 };
 
