@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import "./pages.css";
@@ -60,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="site-header shell">
           <Link className="brand" href="/" aria-label="Sutcliffe Trading home">
-            <img src="/brand/sutcliffe-logo-original-horizontal.png" alt="Sutcliffe Trading" />
+            <Image src="/brand/sutcliffe-logo-original-horizontal.png" alt="Sutcliffe Trading" width={2048} height={682} sizes="(max-width: 900px) 142px, 188px" priority />
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/">Home</Link>
@@ -102,7 +103,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         }) }} />
         <footer className="site-footer shell">
           <div>
-            <img src="/brand/sutcliffe-logo-original-square.png" alt="Sutcliffe Trading" />
+            <Image src="/brand/sutcliffe-logo-original-square.png" alt="Sutcliffe Trading logo" width={1254} height={1254} sizes="(max-width: 900px) 112px, 130px" loading="lazy" />
             <p>New Zealand timber brokers<br />Supplying since 1988.</p>
           </div>
           <div>
