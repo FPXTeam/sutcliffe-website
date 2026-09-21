@@ -43,12 +43,12 @@ const nextConfig: NextConfig = {
       {
         source: "/timber-products",
         destination: "/timber",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/about-us",
         destination: "/about",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
