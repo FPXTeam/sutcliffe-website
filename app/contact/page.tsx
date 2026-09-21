@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "../components/ContactForm";
+import "../pages.css";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Sutcliffe Trading | Timber Enquiries NZ" },
