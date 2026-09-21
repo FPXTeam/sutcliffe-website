@@ -20,6 +20,8 @@ export default function ContactForm() {
       });
       if (!response.ok) throw new Error("Request failed");
       form.reset();
+      const win = window as Window & { gtag?: (...args: unknown[]) => void };
+      win.gtag?.("event", "contact_submit", { form_name: "timber_enquiry" });
       setStatus("success");
     } catch {
       setStatus("error");
