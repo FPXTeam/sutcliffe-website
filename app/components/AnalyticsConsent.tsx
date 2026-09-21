@@ -14,36 +14,109 @@ function readConsent(): ConsentChoice {
   return value === "analytics" || value === "essential" ? value : null;
 }
 
+function gtagEvent(name: string, params: Record<string, string> = {}) {
+  const win = window as Window & { gtag?: (...args: unknown[]) => void };
+  win.gtag?.("event", name, params);
+}
+
 export default function AnalyticsConsent() {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const [choice, setChoice] = useState<ConsentChoice>(null);
   const [ready, setReady] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const dialogRef = useRef<HTMLElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     setChoice(readConsent());
     setReady(true);
-
     const openSettings = () => setSettingsOpen(true);
     window.addEventListener(SETTINGS_EVENT, openSettings);
     return () => window.removeEventListener(SETTINGS_EVENT, openSettings);
   }, []);
 
+  const showDialog = ready && (choice === null || settingsOpen);
+  const analyticsAllowed = ready && choice === "analytics" && Boolean(measurementId);
+
   useEffect(() => {
-    if ((ready && choice === null) || settingsOpen) {
-      window.requestAnimationFrame(() => headingRef.current?.focus());
-    }
-  }, [choice, ready, settingsOpen]);
+    if (!showDialog) return;
+
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => headingRef.current?.focus());
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && settingsOpen && choice !== null) {
+        event.preventDefault();
+        setSettingsOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((element) => !element.hasAttribute("hidden"));
+
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      window.requestAnimationFrame(() => previousFocusRef.current?.focus());
+    };
+  }, [showDialog, settingsOpen, choice]);
+
+  useEffect(() => {
+    if (!analyticsAllowed) return;
+
+    const trackOutbound = (event: MouseEvent) => {
+      const target = event.target instanceof Element ? event.target.closest("a[href]") as HTMLAnchorElement | null : null;
+      if (!target) return;
+      const href = target.getAttribute("href") || "";
+
+      if (href.startsWith("mailto:")) {
+        gtagEvent("email_click", { link_url: href });
+      } else if (href.startsWith("tel:")) {
+        gtagEvent("phone_click", { link_url: href });
+      } else {
+        try {
+          const url = new URL(target.href);
+          if (url.hostname === "www.fpx.nz" || url.hostname === "fpx.nz") {
+            gtagEvent("fpx_sourcing_click", { link_url: url.href });
+          } else if (url.hostname === "app.fpx.nz") {
+            gtagEvent("fpx_app_click", { link_url: url.href });
+          }
+        } catch {
+          return;
+        }
+      }
+    };
+
+    document.addEventListener("click", trackOutbound);
+    return () => document.removeEventListener("click", trackOutbound);
+  }, [analyticsAllowed]);
 
   function saveChoice(nextChoice: Exclude<ConsentChoice, null>) {
     window.localStorage.setItem(STORAGE_KEY, nextChoice);
     setChoice(nextChoice);
     setSettingsOpen(false);
   }
-
-  const showDialog = ready && (choice === null || settingsOpen);
-  const analyticsAllowed = ready && choice === "analytics" && Boolean(measurementId);
 
   return (
     <>
@@ -58,6 +131,7 @@ export default function AnalyticsConsent() {
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
               gtag('js', new Date());
               gtag('consent', 'default', {
                 analytics_storage: 'granted',
@@ -78,6 +152,7 @@ export default function AnalyticsConsent() {
       {showDialog && (
         <div className="consent-backdrop" role="presentation">
           <section
+            ref={dialogRef}
             className="consent-dialog"
             role="dialog"
             aria-modal="true"
