@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
-import "./pages.css";
 import "./site-audit.css";
 import "./brand-system.css";
 import "./motion.css";
