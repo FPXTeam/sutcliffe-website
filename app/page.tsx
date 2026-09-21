@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 const featured = [
-  { name:"Manufacturing", description:"Timber feedstock for wood processors and manufacturers.", image:"/images/product-groups/manufacturing/industrial-stack-on-conveyor.jpg", imageAlt:"New Zealand Radiata Pine manufacturing timber stacked on a processing conveyor.", href:"/timber#manufacturing" },
-  { name:"Building & Construction", description:"Structural, building, finishing and specialist construction timber.", image:"/images/product-groups/building-construction/sunlit-timber-frame-corridor.jpg", imageAlt:"Radiata Pine framing inside a building under construction.", href:"/timber#building" },
-  { name:"Outdoor & Landscaping", description:"Treated and purpose-made timber for outdoor construction and landscaping.", image:"/images/product-groups/outdoor-landscaping/modern-timber-fenced-backyard-garden.jpg", imageAlt:"Modern backyard with timber fencing and landscaped garden beds.", href:"/timber#outdoor" },
-  { name:"Dunnage", description:"Timber for freight, shipping, load support and industrial transport.", image:"/images/product-groups/dunnage/industrial-cargo-on-timber-dunnage.jpg", imageAlt:"Radiata Pine dunnage supporting wrapped industrial cargo.", href:"/timber#dunnage" },
+  { name:"Manufacturing", description:"Timber feedstock for wood processors and manufacturers.", image:"/images/product-groups/manufacturing/industrial-stack-on-conveyor.jpg", imageAlt:"New Zealand Radiata Pine manufacturing timber stacked on a processing conveyor.", href:"/timber/manufacturing" },
+  { name:"Building & Construction", description:"Structural, building, finishing and specialist construction timber.", image:"/images/product-groups/building-construction/sunlit-timber-frame-corridor.jpg", imageAlt:"Radiata Pine framing inside a building under construction.", href:"/timber/building-construction" },
+  { name:"Outdoor & Landscaping", description:"Treated and purpose-made timber for outdoor construction and landscaping.", image:"/images/product-groups/outdoor-landscaping/modern-timber-fenced-backyard-garden.jpg", imageAlt:"Modern backyard with timber fencing and landscaped garden beds.", href:"/timber/outdoor-landscaping" },
+  { name:"Dunnage", description:"Timber for freight, shipping, load support and industrial transport.", image:"/images/product-groups/dunnage/industrial-cargo-on-timber-dunnage.jpg", imageAlt:"Radiata Pine dunnage supporting wrapped industrial cargo.", href:"/timber/dunnage" },
 ];
 const faqs = [
   ["What species do you trade?","We specialise in New Zealand-grown Radiata Pine across manufacturing, building and construction, outdoor and landscaping, and dunnage applications."],
