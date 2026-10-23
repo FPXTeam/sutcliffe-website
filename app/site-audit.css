@@ -93,8 +93,15 @@ p{ text-wrap:pretty; }
   .category-summary{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 18px}
 }
 
-/* Timber hero: the artwork already renders as a CSS background. Keep the redundant Next image out of the paint stack so it cannot cover the text while CSS chunks settle. */
-.timber-hero > .timber-hero-image{display:none!important}
-.timber-hero > .eyebrow,.timber-hero > h1,.timber-hero > p{position:relative;z-index:5}
+/* Timber hero: keep one visible image layer, a fixed contrast overlay, and the copy above both. */
+.timber-hero{isolation:isolate;position:relative;overflow:hidden}
+.timber-hero > .timber-hero-image{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;z-index:0!important;filter:none!important}
+.timber-hero::before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;pointer-events:none!important;background:linear-gradient(90deg,rgba(3,27,21,.96) 0%,rgba(3,27,21,.88) 38%,rgba(3,27,21,.38) 62%,rgba(3,27,21,.12) 100%)!important}
+.timber-hero::after{display:none!important}
+.timber-hero > .eyebrow,.timber-hero > h1,.timber-hero > p{position:relative!important;z-index:2!important}
+@media(max-width:900px){
+  .timber-hero > .timber-hero-image{object-position:67% center!important}
+  .timber-hero::before{background:linear-gradient(180deg,rgba(3,27,21,.94) 0%,rgba(3,27,21,.82) 52%,rgba(3,27,21,.34) 100%)!important}
+}
 
 /* Presentation preview branch deployment trigger. */
