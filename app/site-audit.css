@@ -93,4 +93,8 @@ p{ text-wrap:pretty; }
   .category-summary{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 18px}
 }
 
+/* Timber hero: the artwork already renders as a CSS background. Keep the redundant Next image out of the paint stack so it cannot cover the text while CSS chunks settle. */
+.timber-hero > .timber-hero-image{display:none!important}
+.timber-hero > .eyebrow,.timber-hero > h1,.timber-hero > p{position:relative;z-index:5}
+
 /* Presentation preview branch deployment trigger. */
