@@ -43,9 +43,9 @@ export default function TimberEnquiryGuide(){
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>
     <header className="knowledge-hero shell">
       <p className="eyebrow">Timber buyer guide · Sutcliffe Trading</p><p className="knowledge-date">Published 21 September 2026</p>
-      <h1>How to specify<br/><em>a timber enquiry.</em></h1>
-      <p className="knowledge-lede">For a useful first response, include the product or grade, dimensions, quantity or volume, treatment requirement and delivery point. If some of those details are still open, describe the application and our team can help narrow the requirement.</p>
-      <div className="actions"><Link className="button button-dark" href="/contact">Send an enquiry</Link><Link className="text-link" href="/timber">View timber range <span>→</span></Link></div>
+      <h1>How to specify<br/><em>a timber request.</em></h1>
+      <p className="knowledge-lede">For a useful first response, include the product or grade, dimensions, quantity or volume, treatment requirement and delivery point. For overseas orders, select Export in FPX and include the destination. If some details are still open, describe the application and our team can help narrow the requirement.</p>
+      <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><a className="text-link" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a></div>
     </header>
 
     <section className="knowledge-layout shell section-pad">
@@ -55,7 +55,7 @@ export default function TimberEnquiryGuide(){
 
     <section className="knowledge-layout shell section-pad rule-top">
       <aside><p className="eyebrow">When the specification is not final</p><h2 className="display-serif">Start with the job, not a guess.</h2></aside>
-      <div className="knowledge-copy"><p>You do not need every field finalised before contacting Sutcliffe Trading. If you know the intended application, approximate volume, delivery location and the constraints that matter, send those first.</p><p>That gives the timber team enough context to discuss practical supply options rather than forcing a product choice before the requirement is clear.</p></div>
+      <div className="knowledge-copy"><p>You do not need every field finalised before sending a request through FPX. If you know the intended application, approximate volume, delivery location and the constraints that matter, include those first.</p><p>That gives the team enough context to review practical supply options rather than forcing a product choice before the requirement is clear.</p></div>
     </section>
 
     <section className="knowledge-layout shell section-pad rule-top">
