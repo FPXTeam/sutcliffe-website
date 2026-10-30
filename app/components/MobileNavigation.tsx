@@ -7,8 +7,8 @@ import { useEffect, useRef, useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "https://app.fpx.nz/explore-fpx-sourcing", label: "Browse Timber", external: true },
-  { href: "https://app.fpx.nz/explore-fpx-sourcing?request=1", label: "Request Timber / Request a Quote", external: true },
+  { href: "/timber", label: "Timber" },
+  { href: "https://app.fpx.nz/explore-fpx-sourcing?request=1", label: "Request Timber/Quote", external: true },
   { href: "/sustainability", label: "Sustainability" },
   { href: "/contact", label: "Contact" },
 ];
