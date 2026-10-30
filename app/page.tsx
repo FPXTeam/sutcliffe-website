@@ -18,10 +18,10 @@ const featured = [
 ];
 const faqs = [
   ["What species do you trade?","We specialise in New Zealand-grown Radiata Pine across manufacturing, building and construction, outdoor and landscaping, and dunnage applications."],
-  ["How does Sutcliffe Trading source timber?","Sutcliffe Trading is an independent timber merchant. We source through established relationships with New Zealand sawmills and manufacturers."],
+  ["How does Sutcliffe Trading source timber?","We work with sawmills and processors across New Zealand to identify timber options for each requirement."],
   ["What is the minimum order?","Orders are generally supplied by packet or commercial volume. Send us the grade, dimensions, volume and delivery point and we will confirm what is possible."],
   ["Can you supply certified timber?","Yes. FSC® certified timber and chain-of-custody documentation are available for qualifying orders. Our certificate and core labour requirements policy are available on request."],
-  ["How does this relate to FPX?","FPX Sourcing is supported by Sutcliffe Trading. You can work with our team directly or explore available timber through FPX."],
+  ["How does FPX fit into the process?","Use FPX to browse timber and submit a request. Contact Sutcliffe directly for general enquiries."],
 ];
 
 export default function Home() {
