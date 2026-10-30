@@ -61,11 +61,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <nav aria-label="Main navigation">
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a>
+            <Link href="/timber">Timber</Link>
             <Link href="/sustainability">Sustainability</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote <span className="header-cta-arrow" aria-hidden="true">↗</span></a>
+          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote <span className="header-cta-arrow" aria-hidden="true">↗</span></a>
           <MobileNavigation />
         </header>
         <AnalyticsConsent />
@@ -130,7 +130,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>Elsewhere</span>
             <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn ↗</a>
             <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote ↗</a>
           </div>
           <div className="footer-bottom">
             <small>© 2026 Sutcliffe Trading</small>
