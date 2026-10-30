@@ -69,3 +69,30 @@
 .fpx-editorial{grid-template-columns:.72fr 1.08fr}
 .fpx-emblem{order:-1;border-left:0;border-right:1px solid var(--line)}
 @media(max-width:900px){.manifesto{width:calc(100% - 24px);margin-top:48px;margin-bottom:48px;padding-left:28px;padding-right:28px}.manifesto-grid{gap:28px}.fpx-editorial{grid-template-columns:1fr}.fpx-emblem{order:-1;border-right:0;border-top:0;border-bottom:1px solid var(--line)}}
+
+
+/* Homepage review refinements */
+.hero-wide h1{font-size:clamp(58px,6.2vw,104px);line-height:.9;letter-spacing:-.062em;margin-top:32px;margin-bottom:26px}
+.hero-title-main{display:block}
+.hero-wide h1 em{display:block;margin-top:.08em;font-size:.77em;line-height:.92;letter-spacing:-.055em}
+.hero-title-since{display:block;margin-top:.08em;font:italic .58em/1 Georgia,serif;letter-spacing:-.045em}
+.hero-wide .hero-copy{width:58%}
+.hero-wide .actions{gap:22px;flex-wrap:wrap}
+.hero-wide .actions .button{min-height:50px;padding-inline:22px;font-weight:700;white-space:nowrap}
+.hero-wide .actions .text-link{font-size:13px}
+.export-sourcing{display:grid;grid-template-columns:.9fr 1.1fr;gap:9vw;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.export-heading h2{margin-top:24px;font-size:clamp(48px,5.2vw,76px)}
+.export-copy{max-width:680px}
+.export-copy p{font:18px/1.65 Georgia,serif;margin:0 0 22px}
+.export-copy .button{margin-top:12px}
+@media(max-width:900px){
+ .hero-wide h1{font-size:58px;line-height:.9}
+ .hero-wide .hero-copy{width:100%}
+ .hero-wide .actions{gap:18px}
+ .export-sourcing{grid-template-columns:1fr;gap:28px}
+ .export-heading h2{font-size:52px}
+}
+@media(max-width:560px){
+ .hero-wide .actions{align-items:flex-start;flex-direction:column}
+ .hero-wide .actions .button{min-height:48px}
+}
