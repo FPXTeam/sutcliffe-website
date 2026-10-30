@@ -21,14 +21,14 @@ const groups: Record<string, Group> = {
   manufacturing: {
     name: "Manufacturing",
     eyebrow: "Radiata Pine for manufacturing",
-    description: "Timber feedstock for wood processors and timber manufacturers to remanufacture into finished products.",
-    intro: "Sutcliffe Trading supplies New Zealand-grown Radiata Pine for processors and manufacturers. We work from the required grade, dimensions, volume and delivery point, then match the requirement through established sawmill and manufacturing relationships.",
+    description: "Rough sawn, green and kiln-dried timber for manufacturers and wood processors, including industrial, utility, cuttings and appearance grades.",
+    intro: "We source timber for manufacturers and wood processors, including customer-specific dimensions, lengths, volumes and processing requirements. By working across different producers, we can consider options beyond one mill’s products and availability.",
     image: "/images/product-groups/manufacturing/industrial-stack-on-conveyor.jpg",
     imageAlt: "New Zealand Radiata Pine manufacturing timber stacked on a processing conveyor.",
     categories: ["Clear 1","Clear 2","Mixed Clears","Dressing","Premium","Cuttings 1–3","COL","Merch","Industrial"],
     intent: "If you know the grade or finished product you are working toward, include it in the enquiry. If the specification is still open, tell us the intended use and our team can help narrow the requirement.",
-    ogTitle: "Manufacturing Radiata Pine Timber NZ | Sutcliffe Trading",
-    metaDescription: "New Zealand Radiata Pine manufacturing timber for wood processors and remanufacturers, supplied through Sutcliffe Trading's established mill relationships."
+    ogTitle: "Manufacturing Timber Sourcing | Sutcliffe Trading",
+    metaDescription: "Rough sawn, green and kiln-dried manufacturing timber sourced through multiple New Zealand sawmills and processors."
   },
   "building-construction": {
     name: "Building & Construction",
@@ -134,7 +134,7 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
         <p className="eyebrow">{group.eyebrow}</p>
         <h1>{group.name}<br/><em>timber supply.</em></h1>
         <p>{group.intro}</p>
-        <div className="actions"><Link className="button button-dark" href="/contact">Send a timber enquiry</Link><Link className="text-link" href="/timber">View full timber range <span>→</span></Link></div>
+        <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><Link className="text-link" href="/timber">View timber groups <span>→</span></Link></div>
       </div>
       <figure><Image src={group.image} alt={group.imageAlt} fill priority fetchPriority="high" decoding="sync" sizes="(max-width: 900px) 100vw, 48vw"/></figure>
     </section>
@@ -144,6 +144,8 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
       <div className="timber-detail-categories">{group.categories.map((item)=><span key={item}>{item}</span>)}</div>
     </section>
 
+    {slug === "manufacturing" && <section className="timber-detail-answer shell section-pad reveal"><div><p className="eyebrow">Manufacturing supply</p><h2 className="display-serif">Timber options shaped by each mill.</h2></div><div><p>We can source:</p><ul><li>Rough sawn timber.</li><li>Green and kiln-dried timber.</li><li>Industrial, utility, cuttings and appearance grades.</li><li>Customer-specific dimensions, lengths, volumes and processing requirements.</li></ul><p>Sawmills differ in the logs they process, their grading rules, cut plans, equipment and processing capabilities. We work across producers to identify suitable products and supply options for your specification.</p></div></section>}
+
     <section className="timber-detail-answer shell section-pad reveal">
       <div><p className="eyebrow">For a useful first response</p><h2 className="display-serif">What should you include in a timber enquiry?</h2></div>
       <div><p>{group.intent}</p><ol><li>Product, grade or intended application</li><li>Required dimensions</li><li>Quantity or commercial volume</li><li>Treatment requirement, if applicable</li><li>Delivery point</li></ol></div>
@@ -151,7 +153,7 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
 
     <section className="timber-detail-answer shell section-pad rule-top reveal">
       <div><p className="eyebrow">How Sutcliffe works</p><h2 className="display-serif">One team from requirement to delivery.</h2></div>
-      <div><p>Sutcliffe Trading has supplied New Zealand timber buyers since 1988. Our team works through established sawmill and manufacturing relationships, matching the requirement to practical supply options and carrying specification, scheduling, freight and follow-up through the order.</p><p>For current products, stock and specifications, use FPX Sourcing or talk directly with the Sutcliffe team.</p><div className="actions"><a className="button button-dark" href="https://app.fpx.nz/" target="_blank" rel="noreferrer">Explore current timber on FPX ↗</a><Link className="text-link" href="/about">About Sutcliffe Trading <span>→</span></Link></div></div>
+      <div><p>Sutcliffe Trading has sourced and supplied New Zealand timber since 1988. We work across sawmills and processors to identify options that fit the requirement, then coordinate quotations and supply arrangements.</p><p>Browse current products on FPX or use its request workflow to send your specification. No FPX account is needed to submit a request.</p><div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><Link className="text-link" href="/about">About Sutcliffe Trading <span>→</span></Link></div></div>
     </section>
 
     <section className="related-timber shell section-pad">
