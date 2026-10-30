@@ -13,11 +13,11 @@ import "./legal.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sutcliffetrading.com"),
   title: {
-    default: "Sutcliffe Trading | New Zealand Timber Supplier Since 1988",
+    default: "Sutcliffe Trading | Sourcing New Zealand Timber Since 1988",
     template: "%s | Sutcliffe Trading",
   },
   description:
-    "New Zealand timber knowledge, trusted relationships and practical supply experience since 1988.",
+    "Sourcing and supplying New Zealand timber through sawmills and timber processors since 1988.",
   category: "Timber supply",
   robots: { index: true, follow: true },
   applicationName: "Sutcliffe Trading",
@@ -33,18 +33,18 @@ export const metadata: Metadata = {
     locale: "en_NZ",
     url: "https://www.sutcliffetrading.com/",
     siteName: "Sutcliffe Trading",
-    title: "Sutcliffe Trading | New Zealand Timber Supplier Since 1988",
+    title: "Sutcliffe Trading | Sourcing New Zealand Timber Since 1988",
     description:
-      "New Zealand-grown Radiata Pine backed by timber knowledge and established industry relationships since 1988.",
+      "Sutcliffe Trading sources New Zealand timber for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
     images: [
       { url: "/og.png", width: 1200, height: 630, alt: "Sutcliffe Trading, New Zealand timber trading since 1988" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sutcliffe Trading | New Zealand Timber Supplier Since 1988",
+    title: "Sutcliffe Trading | Sourcing New Zealand Timber Since 1988",
     description:
-      "New Zealand-grown Radiata Pine backed by timber knowledge and established industry relationships since 1988.",
+      "Sutcliffe Trading sources New Zealand timber for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
     images: ["/og.png"],
   },
 };
@@ -61,11 +61,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <nav aria-label="Main navigation">
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/timber">Timber</Link>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a>
             <Link href="/sustainability">Sustainability</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <Link className="header-cta" href="/contact">Request timber <span className="header-cta-arrow" aria-hidden="true">→</span></Link>
+          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote <span className="header-cta-arrow" aria-hidden="true">↗</span></a>
           <MobileNavigation />
         </header>
         <AnalyticsConsent />
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "@id": "https://www.sutcliffetrading.com/#organization",
               name: "Sutcliffe Trading",
               legalName: "Sutcliffe Trading Limited",
-              description: "New Zealand timber merchant supplying New Zealand-grown Radiata Pine through established sawmill and manufacturing relationships.",
+              description: "Sourcing and supplying New Zealand timber through sawmills and timber processors since 1988.",
               url: "https://www.sutcliffetrading.com/",
               logo: "https://www.sutcliffetrading.com/brand/sutcliffe-logo-original-square.png",
               foundingDate: "1988",
@@ -112,12 +112,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="site-footer shell">
           <div>
             <Image src="/brand/sutcliffe-logo-original-square.png" alt="Sutcliffe Trading logo" width={1254} height={1254} sizes="(max-width: 900px) 112px, 130px" loading="lazy" />
-            <p>New Zealand timber brokers<br />Supplying since 1988.</p>
+            <p>Sourcing and supplying New Zealand timber<br />Since 1988.</p>
           </div>
           <div>
             <span>Navigate</span>
             <Link href="/about">About</Link>
-            <Link href="/timber">Timber</Link>
+            <Link href="/timber">Timber groups</Link>
             <Link href="/sustainability">Sustainability</Link>
           </div>
           <div>
@@ -129,7 +129,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div>
             <span>Elsewhere</span>
             <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn ↗</a>
-            <a href="https://www.fpx.nz/">FPX Sourcing ↗</a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a>
           </div>
           <div className="footer-bottom">
             <small>© 2026 Sutcliffe Trading</small>
