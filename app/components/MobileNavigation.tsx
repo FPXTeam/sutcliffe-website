@@ -7,7 +7,8 @@ import { useEffect, useRef, useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/timber", label: "Timber" },
+  { href: "https://app.fpx.nz/explore-fpx-sourcing", label: "Browse Timber", external: true },
+  { href: "https://app.fpx.nz/explore-fpx-sourcing?request=1", label: "Request Timber / Request a Quote", external: true },
   { href: "/sustainability", label: "Sustainability" },
   { href: "/contact", label: "Contact" },
 ];
@@ -81,6 +82,8 @@ export default function MobileNavigation() {
               <Link
                 key={link.href}
                 href={link.href}
+                target={"external" in link && link.external ? "_blank" : undefined}
+                rel={"external" in link && link.external ? "noreferrer" : undefined}
                 aria-current={active ? "page" : undefined}
                 onClick={() => setOpen(false)}
               >
