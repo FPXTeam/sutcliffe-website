@@ -134,7 +134,7 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
         <p className="eyebrow">{group.eyebrow}</p>
         <h1>{group.name}<br/><em>timber supply.</em></h1>
         <p>{group.intro}</p>
-        <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><Link className="text-link" href="/timber">View timber groups <span>→</span></Link></div>
+        <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a><Link className="text-link" href="/timber">View timber groups <span>→</span></Link></div>
       </div>
       <figure><Image src={group.image} alt={group.imageAlt} fill priority fetchPriority="high" decoding="sync" sizes="(max-width: 900px) 100vw, 48vw"/></figure>
     </section>
@@ -153,7 +153,7 @@ export default async function TimberGroupPage({ params }: { params: Promise<{ sl
 
     <section className="timber-detail-answer shell section-pad rule-top reveal">
       <div><p className="eyebrow">How Sutcliffe works</p><h2 className="display-serif">One team from requirement to delivery.</h2></div>
-      <div><p>Sutcliffe Trading has sourced and supplied New Zealand timber since 1988. We work across sawmills and processors to identify options that fit the requirement, then coordinate quotations and supply arrangements.</p><p>Browse current products on FPX or use its request workflow to send your specification. No FPX account is needed to submit a request.</p><div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><Link className="text-link" href="/about">About Sutcliffe Trading <span>→</span></Link></div></div>
+      <div><p>Sutcliffe Trading has sourced and supplied New Zealand timber since 1988. We work across sawmills and processors to identify options that fit the requirement, then coordinate quotations and supply arrangements.</p><p>Browse current products on FPX or use its request workflow to send your specification. No FPX account is needed to submit a request.</p><div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber </a><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a><Link className="text-link" href="/about">About Sutcliffe Trading <span>→</span></Link></div></div>
     </section>
 
     <section className="related-timber shell section-pad">
