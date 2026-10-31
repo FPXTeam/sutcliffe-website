@@ -45,7 +45,7 @@ export default function TimberEnquiryGuide(){
       <p className="eyebrow">Timber buyer guide · Sutcliffe Trading</p><p className="knowledge-date">Published 21 September 2026</p>
       <h1>How to specify<br/><em>a timber request.</em></h1>
       <p className="knowledge-lede">For a useful first response, include the product or grade, dimensions, quantity or volume, treatment requirement and delivery point. For overseas orders, select Export in FPX and include the destination. If some details are still open, describe the application and our team can help narrow the requirement.</p>
-      <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber / Request a Quote ↗</a><a className="text-link" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a></div>
+      <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a><a className="text-link" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber </a></div>
     </header>
 
     <section className="knowledge-layout shell section-pad">
