@@ -65,7 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/sustainability">Sustainability</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote <span className="header-cta-arrow" aria-hidden="true">↗</span></a>
+          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote <span className="header-cta-arrow" aria-hidden="true"></span></a>
           <MobileNavigation />
         </header>
         <AnalyticsConsent />
@@ -124,13 +124,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span>Contact</span>
             <a href="mailto:sales@sutcliffetrading.com">sales@sutcliffetrading.com</a>
             <a href="tel:+642108473262">+64 21 084 73262</a>
-            <a href="https://share.google/KfADiFmeFpedG20pX" target="_blank" rel="noopener noreferrer">Auckland, New Zealand ↗</a>
+            <a href="https://share.google/KfADiFmeFpedG20pX" target="_blank" rel="noopener noreferrer">Auckland, New Zealand </a>
           </div>
           <div>
             <span>Elsewhere</span>
-            <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn ↗</a>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber ↗</a>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote ↗</a>
+            <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn </a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber </a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a>
           </div>
           <div className="footer-bottom">
             <small>© 2026 Sutcliffe Trading</small>
