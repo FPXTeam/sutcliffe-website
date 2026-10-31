@@ -105,3 +105,18 @@ p{ text-wrap:pretty; }
 }
 
 /* Presentation preview branch deployment trigger. */
+
+
+/* Review pass: align hero heights across the site and keep range actions apart. */
+.hero-wide,.hero-wide .hero-inner,.inner-hero,.contact-hero{min-height:min(680px,72svh)}
+.range-footer{justify-content:flex-start;gap:32px}
+.range-footer>*{flex:0 0 auto}
+@media(max-width:900px){
+ .hero-wide,.hero-wide .hero-inner,.inner-hero,.contact-hero{min-height:min(620px,calc(100svh - 76px))}
+ .hero-wide .hero-copy{padding-bottom:120px}
+ .range-footer{gap:20px;flex-wrap:wrap}
+}
+@media(max-width:560px){
+ .hero-wide,.hero-wide .hero-inner,.inner-hero,.contact-hero{min-height:560px}
+ .hero-wide .hero-copy{padding-bottom:80px}
+}
