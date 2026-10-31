@@ -125,7 +125,7 @@ p{ text-wrap:pretty; }
 /* Inner page hero headings should match the homepage scale and wrap naturally. */
 .inner-hero h1,.contact-hero h1{
   max-width:1200px;
-  font-size:clamp(52px,5.4vw,104px);
+  font-size:clamp(48px,4vw,82px);
   line-height:.9;
   letter-spacing:-.065em;
   margin:30px 0 26px;
@@ -133,17 +133,17 @@ p{ text-wrap:pretty; }
 .inner-hero h1 em,.contact-hero h1 em{
   display:block;
   margin-top:.06em;
-  font:italic .76em/.96 Georgia,"Times New Roman",serif;
+  font:italic .76em/.98 Georgia,"Times New Roman",serif;
   letter-spacing:-.055em;
   text-transform:none;
 }
 @media(max-width:900px){
   .inner-hero h1,.contact-hero h1{
     max-width:100%;
-    font-size:clamp(48px,8vw,72px);
+    font-size:clamp(44px,6.2vw,62px);
     margin:24px 0 20px;
   }
 }
 @media(max-width:560px){
-  .inner-hero h1,.contact-hero h1{font-size:clamp(40px,11vw,58px)}
+  .inner-hero h1,.contact-hero h1{font-size:clamp(38px,9.5vw,50px)}
 }
