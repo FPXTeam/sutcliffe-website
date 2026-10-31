@@ -218,3 +218,23 @@
 .enquiry-example p:last-child{border-bottom:0}.enquiry-example .example-note{font:14px/1.55 Georgia,serif;color:var(--muted);padding-top:22px}
 @media(max-width:900px){.knowledge-layout{grid-template-columns:1fr;gap:34px}.knowledge-hero{padding-top:70px;padding-bottom:70px}}
 @media(max-width:560px){.knowledge-hero h1{font-size:clamp(48px,14vw,68px)}.knowledge-lede{font-size:18px}}
+
+
+/* Final hero scale: use the same heading scale and serif emphasis as the homepage. */
+.inner-hero h1,.contact-hero h1,.timber-detail-hero h1,.knowledge-hero h1{
+  font-size:clamp(58px,6.2vw,104px);
+  line-height:.9;
+  letter-spacing:-.062em;
+  text-transform:uppercase;
+  margin:32px 0 26px;
+}
+.inner-hero h1 em,.contact-hero h1 em,.timber-detail-hero h1 em,.knowledge-hero h1 em{
+  display:block;
+  margin-top:.08em;
+  font:italic .77em/.92 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;
+  text-transform:none;
+}
+@media(max-width:900px){
+  .inner-hero h1,.contact-hero h1,.timber-detail-hero h1,.knowledge-hero h1{font-size:58px}
+}
