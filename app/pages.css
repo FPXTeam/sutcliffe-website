@@ -238,3 +238,27 @@
 @media(max-width:900px){
   .inner-hero h1,.contact-hero h1,.timber-detail-hero h1,.knowledge-hero h1{font-size:58px}
 }
+
+
+/* Keep the request CTAs compact and consistent with the site's navigation buttons. */
+.header-cta,
+.contact-layout > div > .button{
+  display:inline-flex;
+  width:max-content;
+  max-width:100%;
+  min-height:48px;
+  padding:13px 22px;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:999px;
+  background:var(--deep);
+  color:var(--paper);
+  font:700 13px/1.2 Arial,Helvetica,sans-serif;
+  white-space:nowrap;
+}
+.header-cta{justify-self:end}
+@media(max-width:900px){
+  .header-cta{min-height:42px;padding:10px 14px;font-size:12px}
+  .contact-layout > div > .button{min-height:46px;padding:12px 18px}
+}
