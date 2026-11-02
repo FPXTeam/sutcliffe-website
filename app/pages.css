@@ -262,3 +262,21 @@
   .header-cta{min-height:42px;padding:10px 14px;font-size:12px}
   .contact-layout > div > .button{min-height:46px;padding:12px 18px}
 }
+
+
+/* Mobile hero type scale. Keep long page titles inside the existing hero layout. */
+@media (max-width: 560px) {
+  .inner-hero h1,
+  .contact-hero h1 {
+    max-width: 100%;
+    font-size: clamp(30px, 9vw, 52px);
+    line-height: .9;
+    letter-spacing: -.055em;
+  }
+
+  .inner-hero.shell,
+  .contact-hero.shell {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
