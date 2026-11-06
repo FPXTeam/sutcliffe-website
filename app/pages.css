@@ -184,6 +184,7 @@
 .timber-detail-categories span:nth-child(even){padding-left:16px}
 .timber-detail-answer ol{margin:28px 0 0;padding-left:22px}
 .timber-detail-answer li{padding:8px 0;font-size:15px;line-height:1.55}
+.timber-detail-answer h2{font-size:clamp(48px,4.6vw,66px);line-height:1}
 .related-timber{border-top:1px solid var(--line)}
 .related-links{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:30px}
 .related-links a{min-height:150px;padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
