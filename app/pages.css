@@ -280,3 +280,9 @@
     padding-right: 22px;
   }
 }
+
+/* Keep the longest product title within narrow phone screens. */
+@media(max-width:560px){.timber-detail-hero h1{font-size:clamp(32px,8.8vw,44px);line-height:.94;letter-spacing:-.05em;overflow-wrap:anywhere}}
+.request-helper{display:block;margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5}
+
+.hero-request-helper{display:block;margin-top:14px;color:#e5ded1;font-size:13px;line-height:1.5}

@@ -3,30 +3,30 @@ import Link from "next/link";
 import "../../pages.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "How to Specify a Timber Enquiry | Sutcliffe Trading NZ" },
-  description: "A practical guide to the product, grade, dimensions, volume, treatment and delivery information to include in a commercial timber enquiry.",
+  title: { absolute: "Timber Enquiry Guide | Sutcliffe Trading" },
+  description: "What to include in a timber enquiry: product, grade, sizes, moisture condition, quantity, delivery timing and receiving constraints.",
   alternates: { canonical: "/timber/how-to-specify-a-timber-enquiry" },
   openGraph: {
     type: "article",
     url: "/timber/how-to-specify-a-timber-enquiry",
-    title: "How to Specify a Timber Enquiry | Sutcliffe Trading NZ",
-    description: "What to include in a commercial timber enquiry so a timber supplier can respond with practical options.",
+    title: "Timber Enquiry Guide | Sutcliffe Trading",
+    description: "What to include in a timber enquiry: product, grade, sizes, moisture condition, quantity, delivery timing and receiving constraints.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Sutcliffe Trading timber enquiry guide" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Specify a Timber Enquiry | Sutcliffe Trading NZ",
-    description: "What to include in a commercial timber enquiry so a timber supplier can respond with practical options.",
+    title: "Timber Enquiry Guide | Sutcliffe Trading",
+    description: "What to include in a timber enquiry: product, grade, sizes, moisture condition, quantity, delivery timing and receiving constraints.",
     images: ["/og.png"]
   }
 };
 
 const steps = [
-  ["1. Product, grade or application", "If you know the product or grade, include it. If you do not, describe what the timber needs to do or the finished application so the requirement can be narrowed from there."],
-  ["2. Dimensions", "Give the required thickness, width and length, including any flexibility that would still work for the job."],
-  ["3. Quantity or volume", "State the number of pieces, packets or commercial volume you expect to require. If the quantity is not final, an estimated range is still useful."],
-  ["4. Treatment requirement", "If treatment is required or already specified for the project, include that requirement. If it is still open, make the intended application clear."],
-  ["5. Delivery point", "Include the delivery town, city or project location so freight and practical supply options can be considered from the start."]
+  ["Product or application", "Include the product or intended use, and the grade and treatment if specified."],
+  ["Dimensions and condition", "Give thickness × width × length, and whether you need green or kiln-dried timber if relevant."],
+  ["Quantity", "Use pieces, lineal metres, m³ or packets. If the quantity is not final, an estimate is useful."],
+  ["Delivery timing and place", "Include the delivery town and required timing so freight and supply options can be considered."],
+  ["Receiving constraints", "Let us know about unloading equipment, truck access or other site constraints."]
 ];
 
 export default function TimberEnquiryGuide(){
@@ -36,7 +36,7 @@ export default function TimberEnquiryGuide(){
       {"@type":"ListItem",position:2,name:"Timber",item:"https://www.sutcliffetrading.com/timber"},
       {"@type":"ListItem",position:3,name:"How to specify a timber enquiry",item:"https://www.sutcliffetrading.com/timber/how-to-specify-a-timber-enquiry"}
     ]},
-    {"@type":"Article","@id":"https://www.sutcliffetrading.com/timber/how-to-specify-a-timber-enquiry#article",headline:"How to specify a commercial timber enquiry",description:"A practical guide to the information commercial timber buyers should include in an enquiry.",datePublished:"2026-09-21",dateModified:"2026-09-21",author:{"@id":"https://www.sutcliffetrading.com/#organization"},publisher:{"@id":"https://www.sutcliffetrading.com/#organization"},mainEntityOfPage:"https://www.sutcliffetrading.com/timber/how-to-specify-a-timber-enquiry",inLanguage:"en-NZ"}
+    {"@type":"Article","@id":"https://www.sutcliffetrading.com/timber/how-to-specify-a-timber-enquiry#article",headline:"Timber enquiry guide",description:"A practical guide to the information commercial timber buyers should include in an enquiry.",datePublished:"2026-09-21",dateModified:"2026-09-21",author:{"@id":"https://www.sutcliffetrading.com/#organization"},publisher:{"@id":"https://www.sutcliffetrading.com/#organization"},mainEntityOfPage:"https://www.sutcliffetrading.com/timber/how-to-specify-a-timber-enquiry",inLanguage:"en-NZ"}
   ]};
 
   return <main className="motion-page knowledge-page">
@@ -44,8 +44,8 @@ export default function TimberEnquiryGuide(){
     <header className="knowledge-hero shell">
       <p className="eyebrow">Timber buyer guide · Sutcliffe Trading</p><p className="knowledge-date">Published 21 September 2026</p>
       <h1>How to specify<br/><em>a timber request.</em></h1>
-      <p className="knowledge-lede">For a useful first response, include the product or grade, dimensions, quantity or volume, treatment requirement and delivery point. For overseas orders, select Export in FPX and include the destination. If some details are still open, describe the application and our team can help narrow the requirement.</p>
-      <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a><a className="text-link" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber </a></div>
+      <p className="knowledge-lede">Include the product or application, grade and treatment if specified, dimensions, green or kiln-dried condition if relevant, quantity, delivery town and timing, and receiving constraints. For export, include your destination. If some details are still open, describe the application and our team can help narrow the requirement.</p>
+      <div className="actions"><a className="button button-dark" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request a quote</a><a className="text-link" href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse timber on FPX</a></div>
     </header>
 
     <section className="knowledge-layout shell section-pad">
@@ -55,13 +55,15 @@ export default function TimberEnquiryGuide(){
 
     <section className="knowledge-layout shell section-pad rule-top">
       <aside><p className="eyebrow">When the specification is not final</p><h2 className="display-serif">Start with the job, not a guess.</h2></aside>
-      <div className="knowledge-copy"><p>You do not need every field finalised before sending a request through FPX. If you know the intended application, approximate volume, delivery location and the constraints that matter, include those first.</p><p>That gives the team enough context to review practical supply options rather than forcing a product choice before the requirement is clear.</p></div>
+      <div className="knowledge-copy"><p>An initial enquiry can be useful before every detail is final. If you know the intended application, approximate volume, delivery location and the constraints that matter, include those first.</p><p>That gives the team enough context to review practical supply options rather than forcing a product choice before the requirement is clear.</p></div>
     </section>
 
     <section className="knowledge-layout shell section-pad rule-top">
       <aside><p className="eyebrow">Example</p><h2 className="display-serif">A useful first enquiry.</h2></aside>
-      <div className="enquiry-example"><p><b>Application:</b> Commercial outdoor project</p><p><b>Product:</b> Treated Radiata Pine posts and rails</p><p><b>Dimensions:</b> Required sizes and lengths listed</p><p><b>Volume:</b> Estimated commercial quantity</p><p><b>Treatment:</b> Project requirement included if known</p><p><b>Delivery:</b> Town, city or site location</p><p className="example-note">The point is not the format. It is giving enough context for the supplier to understand the requirement.</p></div>
+      <div className="enquiry-example"><p>Please quote one full packet of 100 × 50 mm radiata pine in 4.8 m lengths for industrial packaging. Delivery to Hamilton, ideally during November. Please confirm grade, moisture condition, pieces per packet, availability and freight. We can unload by forklift.</p><p className="example-note">Illustrative enquiry, not a stock offer.</p></div>
     </section>
+
+    <section className="knowledge-layout shell section-pad rule-top"><aside><p className="eyebrow">Minimum order</p><h2 className="display-serif">Order quantities.</h2></aside><div className="knowledge-copy"><p>For New Zealand deliveries, our minimum order is generally one full packet. For export, it is generally one 40-foot high-cube container. Packet sizes vary by product. Send your specification, quantity and delivery destination and we will confirm supply options.</p></div></section>
 
     <section className="related-timber shell section-pad rule-top">
       <p className="eyebrow">Explore by requirement</p>

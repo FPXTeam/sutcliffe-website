@@ -36,9 +36,10 @@ export default function ContactForm() {
       <label className="full">Company<input autoComplete="organization" type="text" name="company" /></label>
       <label className="full">Message<textarea required name="message" rows={6} /></label>
       <input className="hp-field" type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+      <p className="contact-privacy-note">Tell us what you need help with. For timber enquiries, include your specification, quantity and delivery location if known.</p>
       <p className="contact-privacy-note">We use the information you provide to respond to your enquiry. See our <a href="/privacy">Privacy Policy</a>.</p>
       <button className="button button-dark" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending…" : "Send enquiry ↗"}
+        {status === "sending" ? "Sending…" : "Send enquiry"}
       </button>
       <p id="form-status" className={`form-status ${status}`} aria-live="polite">
         {status === "success" && "Thanks. Your enquiry has been sent to the Sutcliffe Trading team."}

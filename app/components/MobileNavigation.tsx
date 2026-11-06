@@ -8,7 +8,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/timber", label: "Timber" },
-  { href: "https://app.fpx.nz/explore-fpx-sourcing?request=1", label: "Request Timber/Quote", external: true },
+  { href: "https://app.fpx.nz/explore-fpx-sourcing?request=1", label: "Request a quote", external: true },
   { href: "/sustainability", label: "Sustainability" },
   { href: "/contact", label: "Contact" },
 ];

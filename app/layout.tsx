@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Sourcing and supplying New Zealand timber through sawmills and timber processors since 1988.",
   category: "Timber supply",
-  robots: { index: true, follow: true },
+  robots: process.env.VERCEL_ENV === "preview" ? { index: false, follow: false } : { index: true, follow: true },
   applicationName: "Sutcliffe Trading",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Sutcliffe Trading",
     title: "Sutcliffe Trading | Sourcing New Zealand Timber Since 1988",
     description:
-      "Sutcliffe Trading sources New Zealand timber for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
+      "Sutcliffe Trading sources New Zealand radiata pine for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
     images: [
       { url: "/og.png", width: 1200, height: 630, alt: "Sutcliffe Trading, New Zealand timber trading since 1988" },
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sutcliffe Trading | Sourcing New Zealand Timber Since 1988",
     description:
-      "Sutcliffe Trading sources New Zealand timber for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
+      "Sutcliffe Trading sources New Zealand radiata pine for manufacturers, merchants and commercial buyers in New Zealand and overseas.",
     images: ["/og.png"],
   },
 };
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/sustainability">Sustainability</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote <span className="header-cta-arrow" aria-hidden="true"></span></a>
+          <a className="header-cta" href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request a quote</a>
           <MobileNavigation />
         </header>
         <AnalyticsConsent />
@@ -86,7 +86,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               employee: { "@id": "https://www.sutcliffetrading.com/about#george-harman" },
               email: "sales@sutcliffetrading.com",
               telephone: "+64 21 084 73262",
-              address: { "@type": "PostalAddress", addressLocality: "Auckland", addressCountry: "NZ" },
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "sales",
@@ -117,20 +116,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div>
             <span>Navigate</span>
             <Link href="/about">About</Link>
-            <Link href="/timber">Timber groups</Link>
+            <Link href="/timber">Timber range</Link>
             <Link href="/sustainability">Sustainability</Link>
           </div>
           <div>
             <span>Contact</span>
             <a href="mailto:sales@sutcliffetrading.com">sales@sutcliffetrading.com</a>
             <a href="tel:+642108473262">+64 21 084 73262</a>
-            <a href="https://share.google/KfADiFmeFpedG20pX" target="_blank" rel="noopener noreferrer">Auckland, New Zealand </a>
+            <span>New Zealand</span>
           </div>
           <div>
             <span>Elsewhere</span>
             <a href="https://www.linkedin.com/company/sutcliffe-trading/">LinkedIn </a>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse Timber </a>
-            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request Timber/Quote </a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing" target="_blank" rel="noreferrer">Browse timber on FPX</a>
+            <a href="https://app.fpx.nz/explore-fpx-sourcing?request=1" target="_blank" rel="noreferrer">Request a quote</a>
           </div>
           <div className="footer-bottom">
             <small>© 2026 Sutcliffe Trading</small>

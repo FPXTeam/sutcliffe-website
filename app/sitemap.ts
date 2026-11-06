@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.sutcliffetrading.com";
-  const updated = new Date("2026-09-21T00:00:00+12:00");
+  const updated = new Date("2026-11-06T00:00:00+12:00");
   return [
     { url: `${base}/`, lastModified: updated },
     { url: `${base}/timber`, lastModified: updated },
