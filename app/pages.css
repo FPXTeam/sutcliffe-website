@@ -185,12 +185,27 @@
 .timber-detail-answer ol{margin:28px 0 0;padding-left:22px}
 .timber-detail-answer li{padding:8px 0;font-size:15px;line-height:1.55}
 .timber-detail-answer h2{font-size:clamp(48px,4.6vw,66px);line-height:1}
+.timber-detail-manufacturing-supply .manufacturing-lead{margin:0 0 14px;font-size:15px;font-weight:700;color:var(--ink)}
+.manufacturing-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;list-style:none;padding:0;margin:0 0 28px;border-top:1px solid var(--line)}
+.manufacturing-products li{display:flex;align-items:center;min-height:64px;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45;color:var(--ink)}
+.manufacturing-notes{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.manufacturing-notes p{margin:0;padding:18px;background:rgba(255,255,255,.42);border-left:2px solid var(--brass-accessible);font-size:14px;line-height:1.6;color:var(--muted)}
+.timber-detail-enquiry .enquiry-copy{max-width:850px}
+.timber-detail-enquiry .enquiry-intro{max-width:760px;margin:0 0 12px;font-size:19px;line-height:1.55;color:var(--ink)}
+.timber-detail-enquiry .enquiry-note{margin:0;font-size:14px;line-height:1.55;color:var(--muted)}
+.timber-detail-enquiry .enquiry-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;counter-reset:enquiry-item;list-style:none;padding:0;margin:28px 0;border-top:1px solid var(--line)}
+.timber-detail-enquiry .enquiry-fields li{counter-increment:enquiry-item;position:relative;display:flex;align-items:center;min-height:64px;padding:14px 10px 14px 42px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45;color:var(--ink)}
+.timber-detail-enquiry .enquiry-fields li::before{content:counter(enquiry-item,decimal-leading-zero);position:absolute;left:0;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--brass-accessible)}
+.enquiry-minimum{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.enquiry-minimum p{margin:0;padding:18px 20px;background:rgba(255,255,255,.5);border-top:2px solid var(--brass-accessible);font-size:14px;line-height:1.6;color:var(--muted)}
 .related-timber{border-top:1px solid var(--line)}
 .related-links{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:30px}
 .related-links a{min-height:150px;padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
 .related-links span{font:25px/1.1 Georgia,serif}.related-links b{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--brass-accessible)}
 .related-context{font-size:14px;color:var(--muted);margin:28px 0 0}.related-context a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){.timber-detail-hero,.timber-detail-grid,.timber-detail-answer{grid-template-columns:1fr;gap:42px}.timber-detail-hero{padding-top:42px;min-height:0}.timber-detail-hero figure{min-height:390px;order:-1}.related-links{grid-template-columns:1fr}.timber-detail-categories{grid-template-columns:1fr}.timber-detail-categories span:nth-child(odd){border-right:0}.timber-detail-categories span:nth-child(even){padding-left:0}}
+@media(max-width:700px){.manufacturing-notes{grid-template-columns:1fr}.enquiry-minimum{grid-template-columns:1fr}}
+@media(max-width:560px){.manufacturing-products,.timber-detail-enquiry .enquiry-fields{grid-template-columns:1fr}.timber-detail-enquiry .enquiry-intro{font-size:17px}.timber-detail-enquiry .enquiry-fields{margin:22px 0}}
 @media(max-width:560px){.timber-detail-hero h1{font-size:clamp(48px,14vw,68px)}.timber-detail-hero figure{min-height:300px}}
 
 .source-ref{font:700 11px Arial,sans-serif;vertical-align:super;margin-left:4px;text-decoration:underline;text-underline-offset:2px}
@@ -287,3 +302,16 @@
 .request-helper{display:block;margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5}
 
 .hero-request-helper{display:block;margin-top:14px;color:#e5ded1;font-size:13px;line-height:1.5}
+
+/* Contact page enquiry copy: restore clear breathing room and separate minimum-order details. */
+.contact-layout{align-items:start}
+.contact-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px;min-width:0}
+.contact-copy>.eyebrow,.contact-copy>.display-serif,.contact-copy>p,.contact-copy>.button,.contact-copy>.request-helper{margin:0}
+.contact-copy .display-serif{max-width:560px;font-size:clamp(48px,4.6vw,68px);line-height:.98}
+.contact-copy .contact-intro{max-width:560px;font-size:18px;line-height:1.6;color:var(--ink)}
+.contact-copy .contact-minimum{display:grid;gap:12px;width:100%;max-width:600px;padding:18px 20px;background:rgba(255,255,255,.42);border-left:2px solid var(--brass-accessible)}
+.contact-copy .contact-minimum p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.contact-copy .button{margin-top:2px}
+.contact-copy .request-helper{margin-top:-10px}
+@media(max-width:900px){.contact-layout{gap:42px}.contact-copy{max-width:680px;gap:18px}.contact-copy .display-serif{font-size:clamp(44px,8vw,60px)}}
+@media(max-width:560px){.contact-copy{gap:16px}.contact-copy .display-serif{font-size:clamp(40px,10vw,52px)}.contact-copy .contact-intro{font-size:16px}.contact-copy .contact-minimum{padding:16px}}
