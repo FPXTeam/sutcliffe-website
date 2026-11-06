@@ -147,3 +147,67 @@ p{ text-wrap:pretty; }
 @media(max-width:560px){
   .inner-hero h1,.contact-hero h1{font-size:clamp(38px,9vw,46px)}
 }
+
+/* Homepage visual polish: retain the existing palette and layouts while bringing the copy into balance. */
+@media (min-width:901px){
+  main.motion-page .hero-wide,
+  main.motion-page .hero-wide .hero-inner{min-height:min(650px,72svh)}
+  main.motion-page .hero-wide .hero-copy{width:min(56%,700px);padding-top:clamp(64px,7vh,92px);padding-bottom:64px}
+  main.motion-page .hero-wide h1{font-size:clamp(56px,5.2vw,82px);line-height:.9;letter-spacing:-.058em;margin:28px 0 24px}
+  main.motion-page .hero-wide h1 em{font-size:.72em;line-height:.98;max-width:620px}
+  main.motion-page .hero-wide .hero-lede{max-width:465px;font-size:clamp(17px,1.3vw,19px);line-height:1.52}
+  main.motion-page .hero-wide .actions{margin-top:26px}
+  main.motion-page .manifesto{text-align:left;padding:clamp(38px,5vw,72px);}
+  main.motion-page .manifesto>.eyebrow{text-align:left}
+  main.motion-page .manifesto-grid{grid-template-columns:minmax(0,1fr) minmax(320px,.85fr);gap:clamp(52px,7vw,100px);justify-items:stretch;align-items:center;margin-top:34px}
+  main.motion-page .manifesto-grid .display-serif{max-width:580px;font-size:clamp(46px,4.2vw,60px);line-height:.99}
+  main.motion-page .manifesto-grid .prose{max-width:520px;font-size:16px;line-height:1.65}
+  main.motion-page .manifesto-grid .prose p{font-size:16px}
+  main.motion-page .merchant-proof .section-heading{max-width:900px;font-size:clamp(44px,4.3vw,62px);line-height:1;letter-spacing:-.04em}
+  main.motion-page .proof-grid{margin-top:42px}
+  main.motion-page .proof-grid>div{min-height:260px;padding:26px}
+  main.motion-page .proof-grid h3{font-size:clamp(23px,2vw,28px);line-height:1.08;margin:52px 0 14px}
+  main.motion-page .proof-grid p{font-size:14px;line-height:1.55}
+  main.motion-page .export-sourcing{grid-template-columns:minmax(320px,.82fr) minmax(0,1.18fr);gap:clamp(42px,5vw,72px);align-items:start;margin-top:0;margin-bottom:0;padding:clamp(40px,5vw,72px);background:var(--paper);border:1px solid rgba(11,48,40,.12);border-radius:26px}
+  main.motion-page .export-heading h2{max-width:500px;margin-top:20px;font-size:clamp(42px,3.7vw,54px);line-height:.98;letter-spacing:-.045em}
+  main.motion-page .export-copy{max-width:none}
+  main.motion-page .export-intro{max-width:700px;font:17px/1.58 Georgia,"Times New Roman",serif;margin:0 0 24px}
+  main.motion-page .export-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  main.motion-page .export-facts>div{min-width:0;padding:18px 16px 20px;border-left:1px solid var(--line)}
+  main.motion-page .export-facts>div:first-child{border-left:0;padding-left:0}
+  main.motion-page .export-facts span{display:block;color:var(--brass-accessible);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4;margin-bottom:10px}
+  main.motion-page .export-facts p{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
+  main.motion-page .export-cta{display:flex;align-items:center;gap:22px;margin-top:24px}
+  main.motion-page .export-cta .button{flex:0 0 auto;margin:0}
+  main.motion-page .export-cta p{max-width:360px;margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+}
+@media (max-width:900px){
+  main.motion-page .manifesto{text-align:left}
+  main.motion-page .manifesto>.eyebrow{text-align:left}
+  main.motion-page .manifesto-grid{justify-items:stretch;gap:28px}
+  main.motion-page .manifesto-grid .display-serif{max-width:640px;font-size:clamp(42px,8vw,58px);line-height:1}
+  main.motion-page .manifesto-grid .prose{max-width:680px;text-align:left}
+  main.motion-page .export-sourcing{padding:32px 26px;gap:26px;border-radius:22px;background:var(--paper);border:1px solid rgba(11,48,40,.12)}
+  main.motion-page .export-heading h2{font-size:clamp(42px,8vw,56px);line-height:1}
+  main.motion-page .export-copy{max-width:720px}
+  main.motion-page .export-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  main.motion-page .export-facts>div{padding:16px 14px;border-left:1px solid var(--line)}
+  main.motion-page .export-facts>div:first-child{padding-left:0;border-left:0}
+  main.motion-page .export-facts span{display:block;color:var(--brass-accessible);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.4;margin-bottom:8px}
+  main.motion-page .export-facts p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+}
+@media (max-width:600px){
+  main.motion-page .manifesto.section-pad{padding:34px 26px}
+  main.motion-page .manifesto-grid{margin-top:24px}
+  main.motion-page .manifesto-grid .display-serif{font-size:clamp(40px,10vw,50px)}
+  main.motion-page .manifesto-grid .prose p{font-size:15px;line-height:1.6}
+  main.motion-page .merchant-proof .section-heading{font-size:clamp(38px,10vw,48px);line-height:1.02}
+  main.motion-page .export-sourcing.section-pad{padding:30px 22px;gap:20px}
+  main.motion-page .export-heading h2{font-size:clamp(38px,10vw,48px)}
+  main.motion-page .export-intro{font-size:16px;line-height:1.55}
+  main.motion-page .export-facts{grid-template-columns:1fr}
+  main.motion-page .export-facts>div,
+  main.motion-page .export-facts>div:first-child{padding:14px 0;border-left:0;border-top:1px solid var(--line)}
+  main.motion-page .export-facts>div:first-child{border-top:0}
+  main.motion-page .export-cta{align-items:flex-start;flex-direction:column;gap:14px;margin-top:20px}
+}
